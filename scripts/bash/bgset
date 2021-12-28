@@ -1,0 +1,17 @@
+#!/bin/bash
+optstring=":hrn"
+while getopts ${optstring} arg; do
+    case "${arg}" in
+	n)  cp "$(pwd)/$2" "$HOME/.config/i3/background"
+	    convert "$HOME/.config/i3/background" "$HOME/.config/i3/background.png"
+	    wal -i "$HOME/.config/i3/background.png"
+	    ;;
+	r)  wal -i "$HOME/.config/i3/background.png"
+	    ;;
+	h)  echo "setta il tuo background nuovo con -n, ripristina l'ultimo scelto con -r"
+	    ;;
+	:)  exit 1
+	    ;;
+    esac
+done
+#	    convert /$HOME/.config/i3/background.png lock.png # -font FiraMono -pointsize 26 -fill white -gravity center -annotate +0+160 "Type Password to Unlock" lock.png #-gravity center -composite newimage.png

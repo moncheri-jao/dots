@@ -1,0 +1,81 @@
+# --- {{{
+# vim:ft=i3config:fdm=marker
+# --- }}}
+# ________  ______   ______   _________  ________   _________  __  __   ______      
+#/_______/\/_____/\ /_____/\ /________/\/_______/\ /________/\/_/\/_/\ /_____/\     
+#\__.::._\/\:::_:\ \\::::_\/_\__.::.__\/\::: _  \ \\__.::.__\/\:\ \:\ \\::::_\/_    
+#   \::\ \    /_\:\ \\:\/___/\  \::\ \   \::(_)  \ \  \::\ \   \:\ \:\ \\:\/___/\   
+#   _\::\ \__ \::_:\ \\_::._\:\  \::\ \   \:: __  \ \  \::\ \   \:\ \:\ \\_::._\:\  
+#  /__\::\__/\/___\:\ ' /____\:\  \::\ \   \:.\ \  \ \  \::\ \   \:\_\:\ \ /____\:\ 
+#  \________\/\______/  \_____\/   \__\/    \__\/\__\/   \__\/    \_____\/ \_____\/ 
+#==================================================================================
+# --- GENERAL --- {{{
+general {
+	colors = true
+	interval = 1
+	color_good = "#00FF00"
+	color_bad = "#FF0000"
+	color_degraded = "#FF8000"
+}
+# --- }}}
+
+# --- ORDER --- {{{
+order += "disk /"
+order += "disk /home"
+order += "memory"
+order += "wireless wlp1s0"
+order += "ethernet _first_"
+order += "battery 1"
+order += "tztime local"
+order += "volume master"
+# --- }}}
+
+# --- DEFINITIONS --- {{{
+memory {
+	format = "MEM %percentage_used (%used)"
+	threshold_degraded = "10"
+	format_degraded = "MEM: %free"
+}
+
+disk "/" {
+	format = "/: %percentage_avail (%avail)"
+	low_threshold = 10
+	format_below_threshold = "/: %percentage_avail (%avail)"
+}
+
+disk "/home" {
+	format = "/home: %percentage_avail (%avail)"
+	low_threshold = 10
+	format_below_threshold = "/home: %percentage_avail (%avail)"
+}
+
+tztime local {
+	format ="%Y-%m-%d %H.%M:%S %Z"
+}
+
+wireless wlp1s0 {
+	format_up = "WIFI%quality | F:%frequency | %essid | ↓:%bitrate | %ip"
+	format_down = "WIFI DOWN"
+}
+
+ethernet _first_ {
+	format_up = "ETH %ip (%speed)"
+	format_down = "ETH DOWN"
+}
+
+battery 1 {
+	format = "%status %percentage %remaining"
+	format_down = "BAT WAR ⚠"
+	status_chr = "CHR"
+	status_bat = "BAT"
+	status_full = "FULL"
+	low_threshold = 15
+	path = "/sys/class/power_supply/BAT1/uevent"
+}
+
+volume master {
+	format = "VOL %volume"
+	format_muted = "MUTE"
+	device = "pulse:alsa_output.pci-0000_02_00.6.analog-stereo"
+}
+# --- }}}

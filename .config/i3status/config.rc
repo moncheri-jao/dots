@@ -1,0 +1,73 @@
+general {
+	interval = 1
+	colors = true
+	color_good = "#00FF00"
+	color_bad = "#FF0000"
+	color_degraded = "#FF8000"
+}
+
+order += "volume master"
+order += "disk /"
+order += "disk /home"
+order += "ipv6"
+order += "wireless wlp1s0"
+order += "battery 0"
+order += "cpu_temperature 0"
+order += "cpu usage 0"
+order += "tztime local"
+
+wireless wlp1s0 {
+	format_up = "W: (%quality at %essid) %ip"
+	format_down = "W: down"
+}
+
+battery 0 {
+	format = "%status %percentage %remaining"
+	format down = "⚠"
+	last_full_capacity = true
+	low_threshold = 15
+	threshold_type = percentage
+	hide_seconds = true
+	status_chr = "CHR"
+	status_bat = "BAT"
+	status_unk = "⚠ UNK"
+	status_full = "FULL"
+}
+
+tztime local {
+	format = "%V, %A %e.%B %H.%M:%S"
+}
+
+load {
+	format = "LOAD %lmin"
+}
+
+cpu_usage {
+	format = "CPU %usage"
+}
+
+temperature 0 {
+	format = "%degrees C"
+}
+
+disk "/" {
+	format = "/: %avail"
+	prefix_type = custom
+	low_treshold = 10
+	threshold_type = percentage_avail
+}
+
+disk "/home" {
+	format = "/home: %avail"
+	prefix_type = custom
+	low_treshold = 10
+	threshold_type = percentage_avail
+}
+
+volume master {
+	format = "VOL: %volume"
+	format_muted = "MUTE"
+	device = "default1"
+	mixer = "Master"
+	mixer_idx = 0
+}
