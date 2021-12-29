@@ -15,25 +15,22 @@ export ZSH="/home/birrabenzina/.oh-my-zsh"
 # --- }}}
 
 # --- TILIX VTE SOURCE --- {{{
-if [ $TILIX_ID ] || [ $VTE_VERSION]; then
+if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
 	source /etc/profile.d/vte.sh
 fi
 # --- }}}
 
 # --- ZSH-CONFIG --- {{{
-# restore pywal colorscheme
-cat $HOME/.cache/wal/sequences
 # set zsh theme
 ZSH_THEME="drunkfox"
-# neofetch startup
-neofetch --kernel_shorthand off --disk_percent on --memory_percent on --underline on --undeline_char = --ascii_bold on --os_arch off --uptime_shorthand tiny --package_managers tiny
-# zsh autoupdate
-zstyle ':omz:ypdate' mode auto #(disabled/reminder)
-# zsh autoupdate
-zstyle ':omz:ypdate' mode auto #(disabled/reminder)
-# zsh plugins
+# restore pywal colorscheme
+cat $HOME/.cache/wal/sequences
+# oh-my-zsh loadup
 plugins=(git zsh-autosuggestions history-substring-search zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
+zstyle ':omz:ypdate' mode auto #(disabled/reminder)
+# neofetch startup
+neofetch --kernel_shorthand off --disk_percent on --memory_percent on --underline on --undeline_char = --ascii_bold on --os_arch off --uptime_shorthand tiny --package_managers tiny
 ## -- EDITOR -- {{{
 if [[ -n $SSH_CONNECTION ]]; then
 	export EDITOR='nvim'
