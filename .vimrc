@@ -84,7 +84,7 @@
 	autocmd FileType tex inoremap <F3> <Esc>:w<Enter>:!xelatex<Space><c-r>%<Enter>
 	autocmd FileType tex inoremap <F4> <Esc>:w<Enter>:!pdflatex<Space><c-r>%<Enter>
 	autocmd FileType tex inoremap <F6> <Esc>:w<Enter>:!latexmk<Space>-pdflua<Space><c-r>%<Enter>
-	autocmd FileType tex inoremap <F8> <Esc>:w<Enter>:subfiletexxer!<Space><c-r>%<Enter>
+	autocmd FileType tex inoremap <F8> <Esc>:w<Enter>:!subfiletexxer<Space>-m<Space><c-r>%<Enter>
 	autocmd FileType tex inoremap <F10> <Esc>:w<Enter>:!texall<Space><c-r>%<Enter>
 " - }}}
 " - NNOREMAPS - {{{
@@ -92,7 +92,7 @@
 	autocmd FileType tex nnoremap <F3> :w<Enter>:!xelatex<Space><c-r>%<Enter><Ins>V
 	autocmd FileType tex nnoremap <F4> :w<Enter>:!pdflatex<Space><c-r>%<Enter><Ins>
 	autocmd FileType tex nnoremap <F6> :w<Enter>:!latexmk<Space>-pdflua<Space><c-r>%<Enter><Ins>
-	autocmd FileType tex nnoremap <F8> :w<Enter>:subfiletexxer!<Space><c-r>%<Enter><Ins>
+	autocmd FileType tex nnoremap <F8> :w<Enter>:!subfiletexxer<Space>-m<Space><c-r>%<Enter><Ins>
 	autocmd FileType tex nnoremap <F10> :w<Enter>:!texall<Space><c-r>%<Enter><Ins>
 " - }}}
 " -- }}}

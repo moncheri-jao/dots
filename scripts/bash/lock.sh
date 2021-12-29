@@ -5,10 +5,8 @@ if pgrep xidlehook; then
 	xidlehook --timer 1500 \
 		'brightnessctl --save; brightnessctl set 10%' \
 		'brightnessctl --restore' \
-	    # lock after 20s of inactivity
 	    --timer 200 \
 		'/bin/locker' \
-	    ## turn off screen after 1 minute
 		'xset dpms force off' \
 		'brightnessctl --restore' \
 	&
@@ -17,10 +15,8 @@ else
 	xidlehook --timer 1500 \
 		'brightnessctl --save; brightnessctl set 10%' \
 		'brightnessctl --restore' \
-	    # lock after 20s of inactivity
 	    --timer 200 \
 		'/bin/locker' \
-	    ## turn off screen after 1 minute
 		'xset dpms force off' \
 		'brightnessctl --restore' \
 	&

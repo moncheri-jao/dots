@@ -1,52 +1,57 @@
-#bin/bash
+#!/bin/bash
 #ViM companion for compiling the main file while editing the subfiles in a child folder, to be used together with mkbook. Note that pdflatex is not compatible with what mkbook creates"
 usage() {
-	echo "USAGE:	subfiletexxer -COMPILER"
-	echo "SUPPORTED COMPILERS:	latexmk, pdflatex, lualatex, xelatex"
+	echo "USAGE:	subfiletexxer -[m/p/l/x/h]"
+	echo "SUPPORTED COMPILERS:	latexmk (m), pdflatex (p), lualatex (l), xelatex (x)"
 }
-case $1 in
-	-latexmk)
-		for tex in "$(dirname $(pwd))"/*; do
+optstring=":hxlpm"
+while getopts ${optstring} arg; do
+	case ${arg} in
+		m)
+		for tex in "$(dirname "$(pwd)")"/*; do
 			case "$tex" in
 				*.tex)
-					$old=$(pwd)
-					cd "$(dirname $(pwd))"
-					latexmk -pdflua $tex
-					cd "$old"
+					old=$(pwd)
+					cd "$(dirname "$(pwd)")" || exit
+					latexmk -pdflua "$tex"
+					cd "$old" || exit
 			esac
 		done;;
-	-pdflatex)
-		for tex in "$(dirname $(pwd))"/*; do
+		p)
+		for tex in "$(dirname "$(pwd)")"/*; do
 			case "$tex" in
 				*.tex)
-					$old=$(pwd)
-					cd "$(dirname $(pwd))"
-					pdflatex $tex
-					cd "$old"
+					old=$(pwd)
+					cd "$(dirname "$(pwd)")" || exit
+					latexmk -pdflua "$tex"
+					cd "$old" || exit
 			esac
 		done;;
-	-lualatex)
-		for tex in "$(dirname $(pwd))"/*; do
+		l)
+		for tex in "$(dirname "$(pwd)")"/*; do
 			case "$tex" in
 				*.tex)
-					$old=$(pwd)
-					cd "$(dirname $(pwd))"
-					lualatex $tex
-					cd "$old"
+					old=$(pwd)
+					cd "$(dirname "$(pwd)")" || exit
+					latexmk -pdflua "$tex"
+					cd "$old" || exit
 			esac
 		done;;
-	-xelatex)
-		for tex in "$(dirname $(pwd))"/*; do
+		x)
+		for tex in "$(dirname "$(pwd)")"/*; do
 			case "$tex" in
 				*.tex)
-					$old=$(pwd)
-					cd "$(dirname $(pwd))"
-					xelatex -pdflua $tex
-					cd "$old"
+					old=$(pwd)
+					cd "$(dirname "$(pwd)")" || exit
+					latexmk -pdflua "$tex"
+					cd "$old" || exit
 			esac
 		done;;
-	*)
-		usage;;
-	-h)
-		usage;;
-esac
+		h)
+		usage
+		;;
+		*)
+		usage
+		;;
+	esac
+done
