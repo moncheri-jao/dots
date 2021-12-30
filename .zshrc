@@ -47,6 +47,7 @@ set -o vi
 alias nt="cd ~/Dropbox/appunti/ && ls"
 alias drop="cd ~/Dropbox/ && ls"
 alias i3f="cd ~/.config/i3 && ls"
+alias books="cd ~/Drive/books && ls"
 # -- }}}
 # -- RICES -- {{{
 alias zshrc="$EDITOR ~/.zshrc"

@@ -111,6 +111,6 @@
 " --- }}}
 
 " --- C --- {{{
-	autocmd FileType c map <F2> :!gcc <C-r>%<Space>-o<Space><C-r>%<Del>exe<Enter><Enter>
-	autocmd FileType c map <F3> :!gcc <C-r>%<Space>-o<Space><C-r>%<Del>exe<Space>-lm<Enter><Enter>
+	autocmd FileType c map <F2> :w<Enter>:!gcc <C-r>%<Space>-o<Space><C-r>%<Del>exe<Enter>
+	autocmd FileType c map <F3> :w<Enter>:!gcc <C-r>%<Space>-o<Space><C-r>%<Del>exe<Space>-lm<Enter>
 " --- }}}
