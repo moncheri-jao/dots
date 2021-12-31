@@ -35,6 +35,8 @@
 " placeholder navigation
 	inoremap þ <++><Esc>T<hi
 	nnoremap þ <Ins><++><Esc>T<h
+	inoremap <M-p> <++><Esc>T<hi
+	nnoremap <M-p> i<++><Esc>T<hi
 " -- }}}
 
 " -- GENERAL -- {{{
@@ -111,6 +113,10 @@
 " --- }}}
 
 " --- C --- {{{
-	autocmd FileType c map <F2> :w<Enter>:!gcc <C-r>%<Space>-o<Space><C-r>%<Del>exe<Enter>
-	autocmd FileType c map <F3> :w<Enter>:!gcc <C-r>%<Space>-o<Space><C-r>%<Del>exe<Space>-lm<Enter>
+	autocmd FileType c nnoremap <F2> :w<Enter>:!gcc <C-r>%<Space>-o<Space><C-r>%<Del>exe<Enter>
+	autocmd FileType c nnoremap <F3> :w<Enter>:!gcc <C-r>%<Space>-o<Space><C-r>%<Del>exe<Space>-lm<Enter>
+	autocmd FileType c inoremap <F2> <Esc>:w<Enter>:!gcc <C-r>%<Space>-o<Space><C-r>%<Del>exe<Enter>
+	autocmd FileType c inoremap <F3> <Esc>:w<Enter>:!gcc <C-r>%<Space>-o<Space><C-r>%<Del>exe<Space>-lm<Enter>
+	autocmd FileType c inoremap <C-c> <Esc>0i//<Esc>A
+	autocmd FileType c nnoremap <C-c> 0i//<Esc>A
 " --- }}}
