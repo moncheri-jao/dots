@@ -4,8 +4,9 @@ function ora() {
         let h = oggi.getHours();
         let m = oggi.getMinutes();
         let s = oggi.getSeconds();
-        m = aggZero(m)
-        s = aggZero(s)
+	h = aggZero(h);
+        m = aggZero(m);
+        s = aggZero(s);
 //        document.getElementById("orologio").innerHTML = h + "." + m + ":" + s;
         console.log(h + "." + m + ":" + s);
         setTimeout(ora, 1000);
