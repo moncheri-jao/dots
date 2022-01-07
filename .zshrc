@@ -56,6 +56,7 @@ alias vimrc="$EDITOR ~/.vimrc"
 alias statusrc="$EDITOR ~/.config/i3status/config"
 alias picomrc="$EDITOR ~/.config/picom/picom.conf"
 alias tilixrc="tilix --preferences"
+alias krc="ibus-setup"
 # -- }}}
 # -- COMMANDS -- {{{
 alias nv="nvim"

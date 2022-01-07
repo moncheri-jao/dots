@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 unsigned hammingDistance (unsigned a, unsigned b) {	
 	int invbina[64], invbinb[64];
 	int i = 0;
@@ -61,8 +62,9 @@ unsigned hammingDistance (unsigned a, unsigned b) {
 		printf("%d\n",(invbina[l] != invbinb[l]));
 	}
 	printf("dist=%d\n",dist);
-	return(dist);
+		return(dist);
 }
 int main () {
 	hammingDistance(173,143);
+	exit(0);
 }

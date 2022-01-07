@@ -23,6 +23,7 @@
 	exec --no-startup-id dex --autostart --environment i3
 	exec xcompmgr -cfn
 	exec --no-startup-id nm-applet
+	exec --no-startup-id ibus-daemon -drxR
 	exec --no-startup-id setbg -o
 	#exec --no-startup-id synthwal
 	exec --no-startup-id picom -b

@@ -7,7 +7,6 @@ function ora() {
 	h = aggZero(h);
         m = aggZero(m);
         s = aggZero(s);
-//        document.getElementById("orologio").innerHTML = h + "." + m + ":" + s;
         console.log(h + "." + m + ":" + s);
         setTimeout(ora, 1000);
 }
@@ -18,3 +17,4 @@ function aggZero(t) {
     return t;
 }
 ora()
+//cock 😳

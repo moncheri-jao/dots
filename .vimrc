@@ -57,7 +57,7 @@
 	set smartindent
 	colorscheme wal
 	set number
-	set sw=8
+	set sw=4
 	set cursorline
 	set fillchars=fold:=
 " -- TRANSPARENCY - {{{
@@ -114,9 +114,9 @@
 
 " --- C --- {{{
 	autocmd FileType c nnoremap <F2> :w<Enter>:!gcc <C-r>%<Space>-o<Space><C-r>%<Del>exe<Enter>
-	autocmd FileType c nnoremap <F3> :w<Enter>:!gcc <C-r>%<Space>-o<Space><C-r>%<Del>exe<Space>-lm<Enter>
-	autocmd FileType c inoremap <F2> <Esc>:w<Enter>:!gcc <C-r>%<Space>-o<Space><C-r>%<Del>exe<Enter>
-	autocmd FileType c inoremap <F3> <Esc>:w<Enter>:!gcc <C-r>%<Space>-o<Space><C-r>%<Del>exe<Space>-lm<Enter>
+	autocmd FileType c nnoremap <F3> :w<Enter>:!gcc <C-r>%<Space>-o<Space><C-r>%<Del>exe<Space>-lm<Space>-Wall<Space>--pedantic<Enter>
+	autocmd FileType c inoremap <F2> <Esc>:w<Enter>:!gcc <C-r>%<Space>-o<Space><C-r>%<Del>exe<Space>-Wall<Space>--pedantic<Enter>
+	autocmd FileType c inoremap <F3> <Esc>:w<Enter>:!gcc <C-r>%<Space>-o<Space><C-r>%<Del>exe<Space>-lm<Space>-Wall<Space>--pedantic<Enter>
 	autocmd FileType c inoremap <C-c> <Esc>0i//<Esc>A
 	autocmd FileType c nnoremap <C-c> 0i//<Esc>A
 " --- }}}
