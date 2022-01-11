@@ -24,7 +24,7 @@ fi
 # set zsh theme
 ZSH_THEME="drunkfox"
 # restore pywal colorscheme
-cat $HOME/.cache/wal/sequences
+#cat $HOME/.cache/wal/sequences
 # oh-my-zsh loadup
 plugins=(git zsh-autosuggestions history-substring-search zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
