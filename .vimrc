@@ -16,12 +16,22 @@
 		Plug 'vim-latex/vim-latex'
 		Plug 'dylanaraps/wal.vim'
 		Plug 'pangloss/vim-javascript'
+		Plug 'vim-syntastic/syntastic'
 		Plug 'ryanoasis/vim-devicons'
-		Plug 'nathanaelkane/vim-indent-guides'
 		Plug 'mboughaba/i3config.vim'
-		"Plug 'LucHermitte/lh-vim-lib'
-		"Plug 'LucHermitte/lh-brackets'
 	call plug#end()
+" -- PLUGIN SETTINGS -- {{{
+" - SYNTASTIC - {{{
+	set statusline+=%#warningmsg#
+	set statusline+=%{SyntasticStatuslineFlag()}
+	set statusline+=%*
+
+	let g:syntastic_always_populate_loc_list = 1
+	let g:syntastic_auto_loc_list = 1
+	let g:syntastic_check_on_open = 1
+	let g:syntastic_check_on_wq = 1
+" - }}}
+" -- }}}
 "--- }}}
 
 " --- BASE SETTINGS --- {{{
@@ -38,7 +48,6 @@
 	inoremap <M-p> <++><Esc>T<hi
 	nnoremap <M-p> i<++><Esc>T<hi
 " -- }}}
-
 " -- GENERAL -- {{{
 " disable autocommenting
 	autocmd FileType *setlocal formatoptions-=c formatoptions-=r formatoptions-=o
@@ -57,7 +66,7 @@
 	set smartindent
 	colorscheme wal
 	set number
-	set sw=4
+	set sw=8
 	set cursorline
 	set fillchars=fold:=
 " -- TRANSPARENCY - {{{
@@ -74,6 +83,11 @@
 	set wildmode=longest,list,full
 " - }}}
 " -- }}}
+"
+" --- VIM --- {{{
+	autocmd FileType vim nnoremap <C-c> 0i"<Esc>
+	autocmd FileType vim inoremap <C-c> <Esc>0i"<Esc>A
+" --- }}}
 
 " --- LATEX --- {{{
 " -- BASE -- {{{

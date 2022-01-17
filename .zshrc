@@ -72,6 +72,5 @@ alias :q="exit"
 # -- FILE SHORTCUTS -- {{{
 alias nem="cd ~/Dropbox/appunti/electromagnetism && nvim electromagnetism.tex"
 
-
 # -- }}}
 # --- }}}
