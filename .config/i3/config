@@ -167,6 +167,7 @@
 	bindsym $mod+d exec --no-startup-id dmenu_run
 	bindsym $mod+l exec --no-startup-id locker
 	bindsym $mod+q kill
+	bindsym $mod+Shift+m exec --no-startup-id thunderbird
 # -- }}}
 # -- PLAYER CONTROL -- {{{
 # - SPOTIFY - {{{
