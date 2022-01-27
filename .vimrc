@@ -83,7 +83,7 @@
 	set wildmode=longest,list,full
 " - }}}
 " -- }}}
-"
+
 " --- VIM --- {{{
 	autocmd FileType vim nnoremap <C-c> 0i"<Esc>
 	autocmd FileType vim inoremap <C-c> <Esc>0i"<Esc>A
@@ -105,7 +105,7 @@
 " - }}}
 " - NNOREMAPS - {{{
 	autocmd FileType tex nnoremap <F2> :w<Enter>:!lualatex<Space><c-r>%<Enter><Ins>
-	autocmd FileType tex nnoremap <F3> :w<Enter>:!xelatex<Space><c-r>%<Enter><Ins>V
+	autocmd FileType tex nnoremap <F3> :w<Enter>:!xelatex<Space><c-r>%<Enter><Ins>
 	autocmd FileType tex nnoremap <F4> :w<Enter>:!pdflatex<Space><c-r>%<Enter><Ins>
 	autocmd FileType tex nnoremap <F6> :w<Enter>:!latexmk<Space>-pdflua<Space><c-r>%<Enter><Ins>
 	autocmd FileType tex nnoremap <F8> :w<Enter>:!subfiletexxer<Space>-m<Space><c-r>%<Enter><Ins>
@@ -118,8 +118,8 @@
 	autocmd FileType tex vnoremap <C-z> :s/%/<Enter>
 " -- }}}
 " -- PDF READING -- {{{
-	autocmd FileType tex nnoremap <leader>z !zathura <c-r>%<Backspace><Backspace><Basckpace>pdf & <cr><cr>
-	autocmd FileType tex inoremap <leader>z <Esc>:!zathura <c-r>%<Backspace><Backspace><Basckpace>pdf & <cr><cr>
+	autocmd FileType tex nnoremap <leader>z :!zathura<space><c-r>%<Backspace><Backspace><Backspace>pdf &<cr><cr>
+	autocmd FileType tex inoremap <leader>z <Esc>:!zathura<space><c-r>%<Backspace><Backspace><Backspace>pdf &<cr><cr>
 " -- }}}
 " -- PLACEHOLDER NAVIGATION -- {{{
 "<++>	

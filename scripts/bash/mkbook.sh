@@ -29,7 +29,7 @@ maketitle () {
 		fi
 	else
 		echo "language not selected, using the english version"
-		cp "$HOME"/scripts/latex/template/title/en/title.tex "$(pwd)"/"$1"/title/title.tex
+		cp "$HOME"/scripts/latex/template/title/en/title.tex "$(pwd)"/"$2"/title/title.tex
 		sed -i 's/..\/<++>/..\/'"$name"'.tex/g' "$(pwd)"/"$name"/title/title.tex
 	fi
 }
