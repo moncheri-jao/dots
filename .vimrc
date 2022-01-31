@@ -26,6 +26,7 @@
 	set statusline+=%{SyntasticStatuslineFlag()}
 	set statusline+=%*
 
+	let g:syntastic_enable_python_checker = 0
 	let g:syntastic_always_populate_loc_list = 1
 	let g:syntastic_auto_loc_list = 1
 	let g:syntastic_check_on_open = 0
@@ -124,6 +125,11 @@
 " -- PLACEHOLDER NAVIGATION -- {{{
 "<++>	
 " -- }}}
+" -- SPELLCHECK -- {{
+	autocmd FileType tex inoremap <C-s> <Esc>:setlocal spell spelllang=en_us<Enter>A
+	autocmd FileType tex nnoremap <C-s> :setlocal spell spelllang=en_us<Enter>
+	autocmd FileType tex nnoremap <leader>s :setlocal spell spelllang=it<Enter>
+	autocmd FileType tex inoremap <leader>s <Esc>:setlocal spell spelllang=it<Enter>A
 " --- }}}
 
 " --- C --- {{{
