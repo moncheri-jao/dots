@@ -30,7 +30,7 @@
 	let g:syntastic_auto_loc_list = 1
 	let g:syntastic_check_on_open = 0
 	let g:syntastic_check_on_wq = 1
-	let g:syntastic_mode_map = { 'passive_filetypes': ['python'] }
+	let g:syntastic_mode_map = { 'passive_filetypes': ['python','latex','tex'] }
 " - }}}
 " -- }}}
 "--- }}}
@@ -121,6 +121,10 @@
 " -- PDF READING -- {{{
 	autocmd FileType tex nnoremap <leader>z :!zathura<space><c-r>%<Backspace><Backspace><Backspace>pdf &<cr><cr>
 	autocmd FileType tex inoremap <leader>z <Esc>:!zathura<space><c-r>%<Backspace><Backspace><Backspace>pdf &<cr><cr>
+" -- }}}
+" -- COMMANDS -- {{{
+	autocmd FileType tex inoremap <C-t> \texttt{}<++><esc>T{i
+	autocmd FileType tex inoremap <M-i> \textit{}<++><esc>T{i
 " -- }}}
 " -- PLACEHOLDER NAVIGATION -- {{{
 "<++>	
