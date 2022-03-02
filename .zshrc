@@ -10,7 +10,7 @@
 # \:_\/\_______\/ \_____\/ \__\/ \::\/ \_\/ \_\/ \_____\/ 
 #========================================================
 # --- PATH EXPORT --- {{{
-export PATH="${PATH}:$HOME/.local/bin:/usr/local/bin:$PATH"
+export PATH="${PATH}:$HOME/.local/bin:/usr/local/bin:$HOME/scripts/sysadm"
 export ZSH="/home/birrabenzina/.oh-my-zsh"
 # --- }}}
 
@@ -73,7 +73,8 @@ alias sysupd="yes | sudo pacman -Syu"
 alias aurupd="yes | yay -Syu"
 # -- }}}
 # -- FILE SHORTCUTS -- {{{
-alias nem="cd ~/Dropbox/appunti/electromagnetism && nvim electromagnetism.tex"
+alias nem="cd ~/Dropbox/spicyphysics/sources/electromagnetism && nvim electromagnetism.tex"
+alias nqm="cd ~/Dropbox/spicyphysics/sources/quantum && nvim qm.tex"
 
 # -- }}}
 # --- }}}

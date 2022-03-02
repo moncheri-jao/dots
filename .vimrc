@@ -98,10 +98,10 @@
 " -- COMPILERS -- {{{
 " - INOREMAPS - {{{
 	autocmd FileType tex inoremap <F2> <Esc>:w<Enter>:!lualatex<Space><c-r>%<Enter>
-	autocmd FileType tex inoremap <F3> <Esc>:w<Enter>:!xelatex<Space><c-r>%<Enter>
-	autocmd FileType tex inoremap <F4> <Esc>:w<Enter>:!pdflatex<Space><c-r>%<Enter>
+	autocmd FileType tex inoremap <F3> <Esc>:w<Enter>:!xelatex<Space><c-r>%<Enter>		
+	autocmd FileType tex inoremap <F8> <Esc>:w<Enter>:!pdflatex<Space><c-r>%<Enter>				" Moving to apparently conflicting <F8>
 	autocmd FileType tex inoremap <F6> <Esc>:w<Enter>:!latexmk<Space>-pdflua<Space><c-r>%<Enter>
-	autocmd FileType tex inoremap <F8> <Esc>:w<Enter>:!subfiletexxer<Space>-m<Space><c-r>%<Enter>
+	autocmd FileType tex inoremap <F4> <Esc>:w<Enter>:!subfiletexxer<Space>-m<Space><c-r>%<Enter>		" Moving to <F4>
 	autocmd FileType tex inoremap <F10> <Esc>:w<Enter>:!texall<Space><c-r>%<Enter>
 " - }}}
 " - NNOREMAPS - {{{
@@ -125,15 +125,19 @@
 " -- COMMANDS -- {{{
 	autocmd FileType tex inoremap <C-t> \texttt{}<++><esc>T{i
 	autocmd FileType tex inoremap <M-i> \textit{}<++><esc>T{i
+	autocmd FileType tex inoremap <C-v> \vec{}<++><esc>T{i
+	autocmd FileType tex inoremap <leader>x \cpr{}{<++>}{<++>}<esc>T{i<esc>T{i<esc>T{i
+	autocmd FileType tex inoremap <leader>i \int_{}^{<++>}<++>\dd{<++>}<esc>T{i<esc>T{i<esc>T{i
 " -- }}}
 " -- PLACEHOLDER NAVIGATION -- {{{
 "<++>	
 " -- }}}
-" -- SPELLCHECK -- {{
+" -- SPELLCHECK -- {{{
 	autocmd FileType tex inoremap <C-s> <Esc>:setlocal spell spelllang=en_us<Enter>A
 	autocmd FileType tex nnoremap <C-s> :setlocal spell spelllang=en_us<Enter>
 	autocmd FileType tex nnoremap <leader>s :setlocal spell spelllang=it<Enter>
 	autocmd FileType tex inoremap <leader>s <Esc>:setlocal spell spelllang=it<Enter>A
+" -- }}}
 " --- }}}
 
 " --- C --- {{{

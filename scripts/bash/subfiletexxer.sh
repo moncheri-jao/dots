@@ -8,15 +8,22 @@ optstring=":hxlpm"
 while getopts ${optstring} arg; do
 	case ${arg} in
 		m)
-		for tex in "$(dirname "$(pwd)")"/*; do
-			case "$tex" in
-				*.tex)
-					old=$(pwd)
-					cd "$(dirname "$(pwd)")" || exit
-					latexmk -pdflua "$tex"
-					cd "$old" || exit
-			esac
-		done;;
+			for file in $(dirname $(pwd))/*
+			do
+				case $file in
+					*.tex)
+						latexmk -pdflua $tex
+				esac
+			done;;
+		#for tex in $(dirname $(pwd))/*; do
+			#case "$tex" in
+				#*.tex)
+					#old=$(pwd)
+					#cd $(dirname $(pwd)) || exit
+					#latexmk -pdflua $tex
+					#cd $old || exit
+			#esac
+		#done;;
 		p)
 		for tex in "$(dirname "$(pwd)")"/*; do
 			case "$tex" in
