@@ -16,21 +16,21 @@
 		Plug 'vim-latex/vim-latex'
 		Plug 'dylanaraps/wal.vim'
 		Plug 'pangloss/vim-javascript'
-		Plug 'vim-syntastic/syntastic'
+		"Plug 'vim-syntastic/syntastic'
 		Plug 'ryanoasis/vim-devicons'
 		Plug 'mboughaba/i3config.vim'
 	call plug#end()
 " -- PLUGIN SETTINGS -- {{{
 " - SYNTASTIC - {{{
-	set statusline+=%#warningmsg#
-	set statusline+=%{SyntasticStatuslineFlag()}
-"	set statusline+=%*
+	"set statusline+=%#warningmsg#
+	"set statusline+=%{SyntasticStatuslineFlag()}
+""	set statusline+=%*
 
-	let g:syntastic_always_populate_loc_list = 1
-	let g:syntastic_auto_loc_list = 1
-	let g:syntastic_check_on_open = 0
-	let g:syntastic_check_on_wq = 1
-	let g:syntastic_mode_map = { 'passive_filetypes': ['python','latex','tex'] }
+	"let g:syntastic_always_populate_loc_list = 1
+	"let g:syntastic_auto_loc_list = 1
+	"let g:syntastic_check_on_open = 0
+	"let g:syntastic_check_on_wq = 1
+	"let g:syntastic_mode_map = { 'passive_filetypes': ['python','latex','tex'] }
 " - }}}
 " -- }}}
 "--- }}}
@@ -99,17 +99,19 @@
 " - INOREMAPS - {{{
 	autocmd FileType tex inoremap <F2> <Esc>:w<Enter>:!lualatex<Space><c-r>%<Enter>
 	autocmd FileType tex inoremap <F3> <Esc>:w<Enter>:!xelatex<Space><c-r>%<Enter>		
-	autocmd FileType tex inoremap <F8> <Esc>:w<Enter>:!pdflatex<Space><c-r>%<Enter>				" Moving to apparently conflicting <F8>
+"	autocmd FileType tex inoremap <F8> <Esc>:w<Enter>:!pdflatex<Space><c-r>%<Enter>				" Moving to apparently conflicting <F8> "" COMPLETELY RULED OUT
 	autocmd FileType tex inoremap <F6> <Esc>:w<Enter>:!latexmk<Space>-pdflua<Space><c-r>%<Enter>
 	autocmd FileType tex inoremap <F4> <Esc>:w<Enter>:!subfiletexxer<Space>-m<Space><c-r>%<Enter>		" Moving to <F4>
-	autocmd FileType tex inoremap <F10> <Esc>:w<Enter>:!texall<Space><c-r>%<Enter>
+	autocmd FileType tex inoremap <F8> <Esc>:w<Enter>:!perlxmk<space>-d<Enter>					"New automatism, written in Perl
+	autocmd FileType tex inoremap <F10> <Esc>:w<Enter>:!texall<Space>-c<Space><c-r>%<Enter>
 " - }}}
 " - NNOREMAPS - {{{
 	autocmd FileType tex nnoremap <F2> :w<Enter>:!lualatex<Space><c-r>%<Enter><Ins>
 	autocmd FileType tex nnoremap <F3> :w<Enter>:!xelatex<Space><c-r>%<Enter><Ins>
-	autocmd FileType tex nnoremap <F4> :w<Enter>:!pdflatex<Space><c-r>%<Enter><Ins>
+"	autocmd FileType tex nnoremap <F4> :w<Enter>:!pdflatex<Space><c-r>%<Enter><Ins>
 	autocmd FileType tex nnoremap <F6> :w<Enter>:!latexmk<Space>-pdflua<Space><c-r>%<Enter><Ins>
-	autocmd FileType tex nnoremap <F8> :w<Enter>:!subfiletexxer<Space>-m<Space><c-r>%<Enter><Ins>
+	autocmd FileType tex nnoremap <F4> :w<Enter>:!subfiletexxer<Space>-m<Space><c-r>%<Enter><Ins>
+	autocmd FileType tex nnoremap <F8> <Esc>:w<Enter>:!perlxmk<space>-d<Enter>					"New automatism, written in Perl
 	autocmd FileType tex nnoremap <F10> :w<Enter>:!texall<Space><c-r>%<Enter><Ins>
 " - }}}
 " -- }}}
@@ -119,8 +121,12 @@
 	autocmd FileType tex vnoremap <C-z> :s/%/<Enter>
 " -- }}}
 " -- PDF READING -- {{{
-	autocmd FileType tex nnoremap <leader>z :!zathura<space><c-r>%<Backspace><Backspace><Backspace>pdf &<cr><cr>
-	autocmd FileType tex inoremap <leader>z <Esc>:!zathura<space><c-r>%<Backspace><Backspace><Backspace>pdf &<cr><cr>
+	"autocmd FileType tex nnoremap <leader>z :!zathura<space><c-r>%<Backspace><Backspace><Backspace>pdf &<cr><cr>
+	"autocmd FileType tex inoremap <leader>z <Esc>:!zathura<space><c-r>%<Backspace><Backspace><Backspace>pdf &<cr><cr>
+	autocmd FileType tex nnoremap <leader>z :!perlthura<space>-s&<enter>
+	autocmd FileType tex inoremap <leader>z <esc>:!perlthura<space>-s&<enter>i
+	autocmd FileType tex nnoremap <leader>p :!perlthura<space>-f&<enter>
+	autocmd FileType tex inoremap <leader>p <esc>:!perlthura<space>-f&<enter>i
 " -- }}}
 " -- COMMANDS -- {{{
 	autocmd FileType tex inoremap <C-t> \texttt{}<++><esc>T{i
