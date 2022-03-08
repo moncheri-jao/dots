@@ -12,13 +12,12 @@ sub help {
 	return;
 }
 my $arg = $ARGV[0];
-if($ARGV[0] eq "") {
+if( ! length $ARGV[0] ) {
 	say "ERROR: no arguments given";
 	help();
 	exit 1;
 } else {
 	my $arg = $ARGV[0];
-	say $arg;
 }
 if($arg eq "-h") {
 	help();
