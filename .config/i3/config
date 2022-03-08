@@ -29,7 +29,10 @@
 	exec --no-startup-id setbg -o
 	#exec --no-startup-id synthwal
 	exec --no-startup-id picom -b
-	exec --no-startup-id lock
+	#exec --no-startup-id lock
+	exec xset s 300 5
+	#exec xss-lock -n /usr/lib/xsecurelock/dimmer -l -- xsecurelock
+	exec xss-lock -n /usr/bin/locker
 	#exec --no-startup-id setxkbkeymap -layout es
 # --- }}}
 
@@ -164,8 +167,8 @@
 	bindsym $mod+f exec firefox
 	bindsym $mod+m exec spotify
 	bindsym $mod+Shift+q exec qutebrowser
-	bindsym $mod+d exec --no-startup-id dmenu_run
-	bindsym $mod+l exec --no-startup-id locker
+	bindsym $mod+d exec --no-startup-id dmenu_run -b -sf green -nf white -fn 'Monospace 13' -i
+	bindsym $mod+l exec --no-startup-id $HOME/scripts/sys/locker
 	bindsym $mod+q kill
 	bindsym $mod+Shift+m exec --no-startup-id thunderbird
 # -- }}}
