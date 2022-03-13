@@ -10,7 +10,7 @@
 # \:_\/\_______\/ \_____\/ \__\/ \::\/ \_\/ \_\/ \_____\/ 
 #========================================================
 # --- PATH EXPORT --- {{{
-export PATH="${PATH}:$HOME/.local/bin:/usr/local/bin:$HOME/scripts/sys"
+export PATH="${PATH}:$HOME/.local/bin:/usr/local/bin:$HOME/programming/sys"
 export ZSH="/home/birrabenzina/.oh-my-zsh"
 # --- }}}
 
