@@ -25,10 +25,11 @@ fi
 ZSH_THEME="drunkfox"
 # restore pywal colorscheme
 #cat $HOME/.cache/wal/sequences
+wal.paper -r
 # oh-my-zsh loadup
 plugins=(git zsh-autosuggestions history-substring-search zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
-zstyle ':omz:ypdate' mode auto #(disabled/reminder)
+zstyle ':omz:update' mode auto #(disabled/reminder)
 # neofetch startup
 neofetch --kernel_shorthand off --disk_percent on --memory_percent on --underline on --undeline_char = --ascii_bold on --os_arch off --uptime_shorthand tiny --package_managers tiny
 ## -- EDITOR -- {{{

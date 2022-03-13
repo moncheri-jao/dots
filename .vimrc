@@ -125,10 +125,10 @@
 " -- PDF READING -- {{{
 	"autocmd FileType tex nnoremap <leader>z :!zathura<space><c-r>%<Backspace><Backspace><Backspace>pdf &<cr><cr>
 	"autocmd FileType tex inoremap <leader>z <Esc>:!zathura<space><c-r>%<Backspace><Backspace><Backspace>pdf &<cr><cr>
-	autocmd FileType tex nnoremap <leader>z :!perlthura<space>-s&<enter>
-	autocmd FileType tex inoremap <leader>z <esc>:!perlthura<space>-s&<enter>i
-	autocmd FileType tex nnoremap <leader>p :!perlthura<space>-f&<enter>
-	autocmd FileType tex inoremap <leader>p <esc>:!perlthura<space>-f&<enter>i
+	autocmd FileType tex nnoremap <leader>z :!perlthura<space>-s<space>&<enter>
+	autocmd FileType tex inoremap <leader>z <esc>:!perlthura<space>-s<pace>&<enter>i
+	autocmd FileType tex nnoremap <leader>p :!perlthura<space>-f<space>&<enter>
+	autocmd FileType tex inoremap <leader>p <esc>:!perlthura<space>-f<space>&<enter>i
 " -- }}}
 " -- COMMANDS -- {{{
 	autocmd FileType tex inoremap <C-t> \texttt{}<++><esc>T{i
