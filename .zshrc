@@ -71,7 +71,7 @@ alias clean-aur='(set -x; yay -Rs $(yay -Qdtq))'
 alias pubip="wget http://checkip.dyndns.org/ -O - -o /dev/null | cut -d: -f 2 | cut -d\<     -f 1"
 alias :q="exit"
 alias sysupd="yes | sudo pacman -Syu"
-alias aurupd="yes | yay -Syu"
+alias aurupd="yes | paru"
 # -- }}}
 # -- FILE SHORTCUTS -- {{{
 alias nem="cd ~/Dropbox/spicyphysics/sources/electromagnetism && nvim electromagnetism.tex"
