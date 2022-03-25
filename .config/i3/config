@@ -28,11 +28,9 @@
 	exec --no-startup-id dropbox
 	exec --no-startup-id nm-applet
 	exec --no-startup-id ibus-daemon -drxR
-	#exec --no-startup-id synthwal
 	exec --no-startup-id picom -b
-	#exec --no-startup-id lock
-	exec xset s 300 5
-	exec xss-lock -n /usr/bin/locker
+	exec --no-startup-id xset s 300 5
+	exec --no-startup-id xss-lock $HOME/programming/sys/locker
 	#exec xss-lock -n /usr/lib/xsecurelock/dimmer -l -- xsecurelock
 	#exec --no-startup-id setxkbkeymap -layout es
 # --- }}}
