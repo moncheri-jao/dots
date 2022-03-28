@@ -10,7 +10,7 @@
 # \:_\/\_______\/ \_____\/ \__\/ \::\/ \_\/ \_\/ \_____\/ 
 #========================================================
 # --- PATH EXPORT --- {{{
-export PATH="${PATH}:$HOME/.local/bin:/usr/local/bin:$HOME/programming/sys"
+export PATH="${PATH}:$HOME/.local/bin:/usr/local/bin:$HOME/.local/bin/sys"
 export ZSH="/home/birrabenzina/.oh-my-zsh"
 # --- }}}
 
@@ -51,6 +51,7 @@ alias emf="cd ~/Dropbox/spicyphysics/sources/electromagnetism && ls"
 alias drop="cd ~/Dropbox/ && ls"
 alias i3f="cd ~/.config/i3 && ls"
 alias books="cd ~/Drive/books && ls"
+alias cmds="cd ~/.local/bin/sys && ls"
 # -- }}}
 # -- RICES -- {{{
 alias zshrc="$EDITOR ~/.zshrc"
