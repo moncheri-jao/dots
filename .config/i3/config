@@ -30,7 +30,7 @@
 	exec --no-startup-id nm-applet
 	exec --no-startup-id picom -b
 	exec --no-startup-id xset s 300 5
-	exec --no-startup-id xss-lock $HOME/programming/sys/lock
+	exec --no-startup-id xss-lock $HOME/.local/bin/scripts/lock
 	exec --no-startup-id ibus-daemon -drxR
 # --- }}}
 
@@ -166,7 +166,7 @@
 	bindsym $mod+m exec spotify
 	bindsym $mod+Shift+q exec qutebrowser
 	bindsym $mod+d exec --no-startup-id dmenu_run -sf green -nf white -fn 'Monospace 13' -i
-	bindsym $mod+l exec --no-startup-id $HOME/programming/sys/lock
+	bindsym $mod+l exec --no-startup-id $HOME/.local/bin/scripts/lock
 	bindsym $mod+q kill
 	bindsym $mod+t exec --no-startup-id thunderbird
 # -- }}}
