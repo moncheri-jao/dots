@@ -88,6 +88,13 @@
 " --- VIM --- {{{
 	autocmd FileType vim nnoremap <C-c> 0i"<Esc>
 	autocmd FileType vim inoremap <C-c> <Esc>0i"<Esc>A
+" -- TODOS -- {{{
+"  find TODOs
+	nnoremap <leader>f /TODO<enter>
+"  make TODOs
+	inoremap <leader>t <esc>Ai<enter>%%TODO
+	nnoremap <leader>t Ai<enter>%%TODO
+"  -- }}}
 " --- }}}
 
 " --- LATEX --- {{{
