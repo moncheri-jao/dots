@@ -92,8 +92,8 @@
 "  find TODOs
 	nnoremap <leader>f /TODO<enter>
 "  make TODOs
-	inoremap <leader>t <esc>Ai<enter>%%TODO
-	nnoremap <leader>t Ai<enter>%%TODO
+	inoremap <leader>t <esc>A<enter>%%TODO
+	nnoremap <leader>t A<enter>%%TODO
 "  -- }}}
 " --- }}}
 
@@ -142,7 +142,7 @@
 	autocmd FileType tex inoremap <M-i> \textit{}<++><esc>T{i
 	autocmd FileType tex inoremap <C-v> \vec{}<++><esc>T{i
 	autocmd FileType tex inoremap <leader>x \cpr{}{<++>}{<++>}<++><esc>T{i<esc>T{i<esc>T{i
-	autocmd FileType tex inoremap <leader>i \int_{}^{<++>}<++>\dd{<++>}<esc>T{i<esc>T{i<esc>T{i
+	autocmd FileType tex inoremap <leader>i \int_{}^{<++>}<++>\dd^{<++>}{<++>}<esc>T{i<esc>T{i<esc>T{i<esc>T{i
 " -- }}}
 " -- PLACEHOLDER NAVIGATION -- {{{
 "<++>	

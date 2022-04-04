@@ -35,8 +35,8 @@
 # --- }}}
 
 # --- WORKSPACES --- {{{
-	set $ws1 "1"
-	set $ws2 "2"
+	set $ws1 "1♳"
+	set $ws2 "2♴"
 	set $ws3 "3"
 	set $ws4 "4"
 	set $ws5 "5"
@@ -76,6 +76,8 @@
 # -- ASSIGNED WORKSPACES -- {{{
 	for_window [class="Spotify"] move to workspace $ws1
 	assign [class="Spotify"] $ws1
+	for_window [class="firefox"] move to workspace $ws2
+	assign [class="firefox"] $ws2
 # -- }}}
 # --- }}}
 
