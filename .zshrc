@@ -74,6 +74,7 @@ alias pubip="wget http://checkip.dyndns.org/ -O - -o /dev/null | cut -d: -f 2 | 
 alias :q="exit"
 alias sysupd="yes | sudo pacman -Syu"
 alias aurupd="yes | paru"
+alias stfu="shutdown now"
 # -- }}}
 # -- FILE SHORTCUTS -- {{{
 alias nem="cd ~/Dropbox/spicyphysics/sources/electromagnetism && nvim electromagnetism.tex"

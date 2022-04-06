@@ -134,14 +134,16 @@
 	"autocmd FileType tex inoremap <leader>z <Esc>:!zathura<space><c-r>%<Backspace><Backspace><Backspace>pdf &<cr><cr>
 	autocmd FileType tex nnoremap <leader>z :!perlthura<space>-s<space>&<enter>
 	autocmd FileType tex inoremap <leader>z <esc>:!perlthura<space>-s<pace>&<enter>i
-	autocmd FileType tex nnoremap <leader>p :!perlthura<space>-f<space>&<enter>
-	autocmd FileType tex inoremap <leader>p <esc>:!perlthura<space>-f<space>&<enter>i
+	autocmd FileType tex nnoremap <leader>o :!perlthura<space>-f<space>&<enter>
+	autocmd FileType tex inoremap <leader>o <esc>:!perlthura<space>-f<space>&<enter>i
 " -- }}}
 " -- COMMANDS -- {{{
 	autocmd FileType tex inoremap <C-t> \texttt{}<++><esc>T{i
 	autocmd FileType tex inoremap <M-i> \textit{}<++><esc>T{i
 	autocmd FileType tex inoremap <C-v> \vec{}<++><esc>T{i
 	autocmd FileType tex inoremap <leader>x \cpr{}{<++>}{<++>}<++><esc>T{i<esc>T{i<esc>T{i
+	autocmd FileType tex inoremap <leader>p \psi
+	autocmd FileType tex inoremap <leader>P \Psi
 	autocmd FileType tex inoremap <leader>i \int_{}^{<++>}<++>\dd^{<++>}{<++>}<esc>T{i<esc>T{i<esc>T{i<esc>T{i
 " -- }}}
 " -- PLACEHOLDER NAVIGATION -- {{{
