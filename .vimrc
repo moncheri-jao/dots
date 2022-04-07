@@ -107,10 +107,10 @@
 	autocmd FileType tex inoremap <F2> <Esc>:w<Enter>:!lualatex<Space><c-r>%<Enter>
 	autocmd FileType tex inoremap <F3> <Esc>:w<Enter>:!xelatex<Space><c-r>%<Enter>		
 "	autocmd FileType tex inoremap <F8> <Esc>:w<Enter>:!pdflatex<Space><c-r>%<Enter>				" Moving to apparently conflicting <F8> "" COMPLETELY RULED OUT
-	autocmd FileType tex inoremap <F6> <Esc>:w<Enter>:!latexmk<Space>-pdflua<Space><c-r>%<Enter>
+	autocmd FileType tex inoremap <F8> <Esc>:w<Enter>:!latexmk<Space>-pdflua<Space><c-r>%<Enter>
 	autocmd FileType tex inoremap <F4> <Esc>:w<Enter>:!subfiletexxer<Space>-m<Space><c-r>%<Enter>
 	autocmd FileType tex inoremap <F8> <Esc>:w<Enter>:!perlxmk<space>-d<space>--subfile<enter>
-	autocmd FileType tex inoremap <F9> <Esc>:w<Enter>:!perlxmk<space>-d<enter>
+	autocmd FileType tex inoremap <F6> <Esc>:w<Enter>:!perlxmk<space>-d<enter>
 	autocmd FileType tex inoremap <F10> <Esc>:w<Enter>:!texall<Space>-c<Space><c-r>%<Enter>
 " - }}}
 " - NNOREMAPS - {{{
