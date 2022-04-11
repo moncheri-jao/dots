@@ -20,40 +20,41 @@ general {
 # --- }}}
 
 # --- ORDER --- {{{
-order += "disk /"
-order += "disk /home"
-order += "memory"
-order += "wireless wlp1s0"
+order += "wireless _first_"
 order += "ethernet _first_"
-order += "battery 1"
 order += "tztime local"
+order += "disk /home"
+order += "disk /"
+order += "memory"
+order += "battery all"
 order += "volume master"
 # --- }}}
 
 # --- DEFINITIONS --- {{{
 memory {
 	format = "MEM %percentage_used (%used)"
+	memory_used_method = classical
 	threshold_degraded = "10"
 	format_degraded = "MEM: %free"
 }
 
 disk "/" {
 	format = "/: %percentage_avail (%avail)"
-	low_threshold = 10
+	low_threshold = "10"
 	format_below_threshold = "/: %percentage_avail (%avail)"
 }
 
 disk "/home" {
 	format = "/home: %percentage_avail (%avail)"
-	low_threshold = 10
+	low_threshold = "10"
 	format_below_threshold = "/home: %percentage_avail (%avail)"
 }
 
 tztime local {
-	format ="%Y-%m-%d %H.%M:%S %Z %I"
+	format ="%d.%m.%Y %H.%M:%S %Z"
 }
 
-wireless wlp1s0 {
+wireless _first_ {
 	format_up = "WIFI %frequency | %essid%quality"
 	format_down = "WIFI DOWN"
 }
@@ -63,14 +64,16 @@ ethernet _first_ {
 	format_down = "ETH DOWN"
 }
 
-battery 1 {
-	format = "%status %percentage %remaining %emptytime"
+battery all {
+	format = "%status %percentage"
+	last_full_capacity = true
 	format_down = "BAT WAR ⚠"
 	status_chr = "CHR"
 	status_bat = "BAT"
 	status_full = "FULL"
+	threshold_type = "percentage"
 	low_threshold = 15
-	path = "/sys/class/power_supply/BAT1/uevent"
+	path = "/sys/class/power_supply/%d/uevent"
 }
 
 volume master {
