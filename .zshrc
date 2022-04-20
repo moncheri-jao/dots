@@ -22,7 +22,8 @@ fi
 
 # --- ZSH-CONFIG --- {{{
 # set zsh theme
-ZSH_THEME="drunkfox"
+#ZSH_THEME="drunkfox"
+ZSH_THEME="drunkfox2"
 # restore pywal colorscheme
 #cat $HOME/.cache/wal/sequences
 wal.paper -r
