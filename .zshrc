@@ -12,6 +12,7 @@
 # --- PATH EXPORT --- {{{
 export PATH="${PATH}:$HOME/.local/bin:/usr/local/bin:$HOME/.local/bin/scripts"
 export ZSH="/home/birrabenzina/.oh-my-zsh"
+export XDG_RUNTIME_DIR="/home/birrabenzina"
 # --- }}}
 
 # --- TILIX VTE SOURCE --- {{{
