@@ -73,8 +73,8 @@ alias pacclean='(set -x; sudo pacman -Rs $(pacman -Qdtq))'
 alias clean-aur='(set -x; yay -Rs $(yay -Qdtq))'
 alias pubip="wget http://checkip.dyndns.org/ -O - -o /dev/null | cut -d: -f 2 | cut -d\<     -f 1"
 alias :q="exit"
-alias sysupd="yes | sudo pacman -Syu"
-alias aurupd="yes | paru -Syu --skipreview"
+alias sysupd="updatelogger && yes | sudo pacman -Syu && date | tee /home/birrabenzina/lastupdate"
+alias aurupd="updatelogger && yes | paru -Syu --skipreview"
 alias stfu="shutdown now"
 # -- }}}
 # -- FILE SHORTCUTS -- {{{
