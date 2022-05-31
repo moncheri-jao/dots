@@ -74,8 +74,11 @@ alias clean-aur='(set -x; yay -Rs $(yay -Qdtq))'
 alias pubip="wget http://checkip.dyndns.org/ -O - -o /dev/null | cut -d: -f 2 | cut -d\<     -f 1"
 alias :q="exit"
 alias sysupd="updatelogger && yes | sudo pacman -Syu && date | tee /home/birrabenzina/lastupdate"
-alias aurupd="updatelogger && yes | paru -Syu --skipreview"
+alias totupd="updatelogger && yes | paru -Syu --skipreview && date | tee /home/birrabenzina/lastupdate"
 alias stfu="shutdown now"
+alias powersave="sudo cpupower frequency-set -g powersave"
+alias performance="sudo cpupower frequency-set -g performance"
+alias schedutil="sudo cpupower frequency-set -g schedutil"
 # -- }}}
 # -- FILE SHORTCUTS -- {{{
 alias nem="cd ~/Dropbox/spicyphysics/sources/electromagnetism && nvim electromagnetism.tex"
