@@ -79,6 +79,7 @@ alias stfu="shutdown now"
 alias powersave="sudo cpupower frequency-set -g powersave"
 alias performance="sudo cpupower frequency-set -g performance"
 alias schedutil="sudo cpupower frequency-set -g schedutil"
+alias clean="clear && neofetch"
 # -- }}}
 # -- FILE SHORTCUTS -- {{{
 alias nem="cd ~/Dropbox/spicyphysics/sources/electromagnetism && nvim electromagnetism.tex"
