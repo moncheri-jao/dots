@@ -15,9 +15,17 @@ sub latexmk ($$) {
 	system("notify-send -t 2000 -- 'Compiling the tex files...'");
 	for(my $i=0;$i<$texscope;$i++) {
 		if($args[1] == 1) {
-			system("cd ../ && latexmk -lualatex $tex[$i]"); # latexmk all files
+			my $sysret = system("cd ../ && latexmk -lualatex $tex[$i]");
+			if ($sysret != 0) {
+				system("notify-send -u critical -t 3000 -- 'Compilation error'");
+				die;
+			}
 		} else {
-			system("latexmk -lualatex $tex[$i]"); # latexmk all files
+			my $sysret = system("latexmk -lualatex $tex[$i]"); # latexmk all files
+			if ($sysret != 0) {
+				system("notify-send -u critical -t 3000 -- 'Compilation error'");
+				die;
+			}
 		}
 	}
 	return;
@@ -34,9 +42,18 @@ sub lualatex ($$) {
 	system("notify-send -t 2000 -- 'Compiling the tex files...'");
 	for(my $i=0;$i<$texscope;$i++) {
 		if($args[1] == 1) {
-			system("cd ../ && latexmk -lualatex $tex[$i]"); # latexmk all files
+			my $sysret = system("cd ../ && latexmk -lualatex $tex[$i]"); # latexmk all files
+			if ($sysret != 0) {
+				system("notify-send -u critical -t 3000 -- 'Compilation error'");
+				die;
+			}
+; # latexmk all files
 		} else {
-			system("lualatex $tex[$i]"); # latexmk all files
+			my $sysret = system("lualatex $tex[$i]");
+			if ($sysret != 0) {
+				system("notify-send -u critical -t 3000 -- 'Compilation error'");
+				die;
+			}
 		}
 	}
 	return;
@@ -53,9 +70,17 @@ sub pdflatex ($$) {
 	system("notify-send -t 2000 -- 'Compiling the tex files...'");
 	for(my $i=0;$i<$texscope;$i++) {
 		if($args[1] == 1) {
-			system("cd ../ && latexmk -lualatex $tex[$i]"); # latexmk all files
+			my $sysret = system("cd ../ && latexmk -lualatex $tex[$i]");
+			if ($sysret != 0) {
+				system("notify-send -u critical -t 3000 -- 'Compilation error'");
+				die;
+			}
 		} else {
-			system("pdflatex $tex[$i]"); # latexmk all files
+			my $sysret = system("pdflatex $tex[$i]");
+			if ($sysret != 0) {
+				system("notify-send -u critical -t 3000 -- 'Compilation error'");
+				die;
+			}
 		}
 	}
 	return;
@@ -72,9 +97,17 @@ sub xelatex ($$) {
 	system("notify-send -t 2000 -- 'Compiling the tex files...'");
 	for(my $i=0;$i<$texscope;$i++) {
 		if($args[1] == 1) {
-			system("cd ../ && latexmk -lualatex $tex[$i]"); # latexmk all files
+			my $sysret = system("cd ../ && latexmk -lualatex $tex[$i]");
+			if ($sysret != 0) {
+				system("notify-send -u critical -t 3000 -- 'Compilation error'");
+				die;
+			}
 		} else {
-			system("xelatex $tex[$i]"); # latexmk all files
+			my $sysret = system("xelatex $tex[$i]");
+			if ($sysret != 0) {
+				system("notify-send -u critical -t 3000 -- 'Compilation error'");
+				die;
+			}
 		}
 	}
 	return;
