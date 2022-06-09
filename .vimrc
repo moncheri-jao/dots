@@ -92,8 +92,8 @@
 "  find TODOs
 	nnoremap <leader>f /TODO<enter>
 "  make TODOs
-	inoremap <leader>t <esc>A<enter>%%TODO
-	nnoremap <leader>t A<enter>%%TODO
+	inoremap <leader>t <esc>A%%TODO
+	nnoremap <leader>t A%%TODO
 "  -- }}}
 " --- }}}
 
