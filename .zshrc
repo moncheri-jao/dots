@@ -80,6 +80,8 @@ alias powersave="sudo cpupower frequency-set -g powersave"
 alias performance="sudo cpupower frequency-set -g performance"
 alias schedutil="sudo cpupower frequency-set -g schedutil"
 alias clean="clear && neofetch"
+alias wre="nmcli d w re"
+alias hotspot="nmcli d w r && sleep 2 && nmcli d w con Jazz\ Band\ Leningrad"
 # -- }}}
 # -- FILE SHORTCUTS -- {{{
 alias nem="cd ~/Dropbox/spicyphysics/sources/electromagnetism && nvim electromagnetism.tex"
