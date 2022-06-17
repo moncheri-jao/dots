@@ -155,6 +155,11 @@
 	autocmd FileType tex nnoremap <leader>s :setlocal spell spelllang=it<Enter>
 	autocmd FileType tex inoremap <leader>s <Esc>:setlocal spell spelllang=it<Enter>A
 " -- }}}
+" -- ABBREVIATIONS & ALIASES -- {{{
+	autocmd FileType tex iabbrev wlg without loss of generality
+	autocmd FileType tex iabbrev fourier Fourier
+	autocmd FileType tex iabbrev iff if and only if
+"  -- }}}
 " --- }}}
 
 " --- C --- {{{
