@@ -159,6 +159,9 @@
 	autocmd FileType tex iabbrev wlg without loss of generality
 	autocmd FileType tex iabbrev fourier Fourier
 	autocmd FileType tex iabbrev iff if and only if
+	autocmd FileType tex iabbrev airy Airy
+	autocmd FileType tex iabbrev emw electromagnetic wave
+	autocmd FileType tex iabbrev emws electromagnetic waves
 "  -- }}}
 " --- }}}
 

@@ -51,7 +51,7 @@ alias nt="cd ~/Dropbox/spicyphysics/ && ls"
 alias emf="cd ~/Dropbox/spicyphysics/sources/electromagnetism && ls"
 alias drop="cd ~/Dropbox/ && ls"
 alias i3f="cd ~/.config/i3 && ls"
-alias books="cd ~/Drive/books && ls"
+alias books="cd ~/books && ls"
 alias cmds="cd ~/.local/bin/sys && ls"
 # -- }}}
 # -- RICES -- {{{
@@ -86,6 +86,6 @@ alias hotspot="nmcli d w r && sleep 2 && nmcli d w con Jazz\ Band\ Leningrad"
 # -- FILE SHORTCUTS -- {{{
 alias nem="cd ~/Dropbox/spicyphysics/sources/electromagnetism && nvim electromagnetism.tex"
 alias nqm="cd ~/Dropbox/spicyphysics/sources/quantum && nvim qm.tex"
-
+alias bib="cd ~/Dropbox/appunti/bibliografia/bib.bib"
 # -- }}}
 # --- }}}
