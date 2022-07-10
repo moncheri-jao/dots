@@ -162,6 +162,8 @@
 	autocmd FileType tex iabbrev airy Airy
 	autocmd FileType tex iabbrev emw electromagnetic wave
 	autocmd FileType tex iabbrev emws electromagnetic waves
+	autocmd FileType tex iabbrev maxwell Maxwell
+	autocmd FileType tex iabbrev hemholtz Helmholtz
 "  -- }}}
 " --- }}}
 
