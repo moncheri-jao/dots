@@ -4,27 +4,28 @@ usage () {
 	echo "USAGE:	-n(ew) set a new background"
 	echo "      	-r(eload) reload pywal sequences"
 	echo "      	-o rerun pywal on the previously saved background"
+	echo "      	-b use the chosen backend (default wal)"
 	echo "     	-h(elp) show this dialog"
 }
 optstring=":hron:b:"
-backend="colorz"
+backend="wal"
 while getopts ${optstring} arg; do
-    case "${arg}" in
-	b)  backend=$OPTARG
-	    ;;
-	n)  cp "$OPTARG" "$HOME/.config/i3/background"
-	    convert "$HOME/.config/i3/background" "$HOME/.config/i3/background.png"
-	    rm "$HOME/.config/i3/background"
-	    wal -i "$HOME/.config/i3/background.png" --saturate 1.0 --vte --backend "$backend"
-	    ;;
-	o)  wal -i "$HOME/.config/i3/background.png" --saturate 1.0 --vte --backend "$backend"
-	    ;;
-	r) 	echo ${OPTARG}
-		cat "$HOME"/.cache/wal/sequences
-		;;
-	h)  usage
-		;;	    
-	*)  usage
-		;;  
-    esac
+	case "${arg}" in
+		b)  backend=$OPTARG
+			;;
+		n)  cp "$OPTARG" "$HOME/.config/i3/background"
+			convert "$HOME/.config/i3/background" "$HOME/.config/i3/background.png"
+			rm "$HOME/.config/i3/background"
+			wal -i "$HOME/.config/i3/background.png" --saturate 1.0 --vte --backend "$backend"
+			;;
+		o)  wal -i "$HOME/.config/i3/background.png" --saturate 1.0 --vte --backend "$backend"
+			;;
+		r) 	echo ${OPTARG}
+			cat "$HOME"/.cache/wal/sequences
+			;;
+		h)  usage
+			;;	    
+		*)  usage
+			;;  
+	esac
 done
