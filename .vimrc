@@ -164,6 +164,10 @@
 	autocmd FileType tex iabbrev emws electromagnetic waves
 	autocmd FileType tex iabbrev maxwell Maxwell
 	autocmd FileType tex iabbrev hemholtz Helmholtz
+	autocmd FileType tex iabbrev Hemholtz Helmholtz
+	autocmd FileType tex iabbrev helmholtz Helmholtz
+	autocmd FileType tex iabbrev grf Green's function
+	autocmd FileType tex iabbrev grfs Green's functions
 "  -- }}}
 " --- }}}
 
