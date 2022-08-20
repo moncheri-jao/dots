@@ -12,9 +12,8 @@
 # --- MAIN SETUP --- {{{
 	set $mod Mod4
 	set $sup Mod1
-	#font pango:ProggySquareTTSZ 14
-	font pango:ProggyCleanTTSZ 14
-	#font pango:Iosevka Nerd Font Mono 12
+	#font pango:ProggyCleanTTSZ 14
+	font pango:basis33 14
 	set $refresh_i3status killall -SIGUSR1 i3status
 	bindsym $mod+Shift+c reload
 	bindsym $mod+Shift+r restart
