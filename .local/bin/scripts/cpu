@@ -1,0 +1,3 @@
+#/bin/sh
+freq=$(cpupower frequency-info | grep "kernel" | cut -d: -f2 | cut -d"(" -f1 | cut -d" " -f2)
+echo "$freq"GHz
