@@ -142,6 +142,7 @@
 	autocmd FileType tex inoremap <C-t> \texttt{}<++><esc>T{i
 	autocmd FileType tex inoremap <M-i> \textit{}<++><esc>T{i
 	autocmd FileType tex inoremap <leader>v \vec{}<++><esc>T{i
+	autocmd FileType tex inoremap <leader>z \hat{\vec{}}<++><esc>T{i
 	autocmd FileType tex inoremap <leader>n \nabla
 	autocmd FileType tex inoremap <leader>x \cpr{}{<++>}{<++>}<++><esc>T{i<esc>T{i<esc>T{i
 	autocmd FileType tex inoremap <leader>p \psi
