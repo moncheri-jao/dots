@@ -1,7 +1,10 @@
 #!/bin/bash
 #touch /tmp/ip
-wifi=$(ifconfig wlp1s0 | grep 'inet' | cut -d: -f2)
-eth=$(ifconfig enp2s0f3u3 | grep 'inet' | cut -d: -f2 | awk '{print $2}' | tr -d "\n")
+wifi=$(ifconfig wlp1s0 | grep 'inet' | cut -d: -f2 | awk '{print $2}' | tr -d "\n")
+ethname=$(ifconfig | grep 'enp' | awk '{print $1}' | cut -d: -f1)
+if ! [ -z "$ethname" ]; then
+	eth=$(ifconfig "$ethname" | grep 'inet' | cut -d: -f2 | awk '{print $2}' | tr -d "\n")
+fi
 #sed -i '/^[[:space:]]*$/d' /tmp/ip
 if [ -z "$wifi" ] && [ -z "$eth" ]; then
 	echo "disconnected"
