@@ -37,7 +37,8 @@
 
 " --- BASE SETTINGS --- {{{
 " -- LEADER -- {{{
-	let mapleader ="\º"
+	"let mapleader ="\º"
+	let mapleader = "\."
 	let ttimeoutlen=500
 " -- }}}
 " -- FUNCTIONS -- {{{
@@ -146,6 +147,8 @@
 	autocmd FileType tex inoremap <leader>p \psi
 	autocmd FileType tex inoremap <leader>P \Psi
 	autocmd FileType tex inoremap <leader>i \int_{}^{<++>}<++>\dd^{<++>}{<++>}<esc>T{i<esc>T{i<esc>T{i<esc>T{i
+	autocmd FileType tex inoremap <leader>, \cdot
+	autocmd FileType tex inoremap <leader>' \times
 " -- }}}
 " -- PLACEHOLDER NAVIGATION -- {{{
 "<++>	
@@ -157,6 +160,9 @@
 	autocmd FileType tex inoremap <leader>s <Esc>:setlocal spell spelllang=it<Enter>A
 " -- }}}
 " -- ABBREVIATIONS & ALIASES -- {{{
+	" only maths abbrev
+	autocmd FileType tex iabbrev stdph e^{i\vec{k}\cdot\vec{r}-i\omega t}
+	" end maths abbrev
 	autocmd FileType tex iabbrev wlg without loss of generality
 	autocmd FileType tex iabbrev fourier Fourier
 	autocmd FileType tex iabbrev iff if and only if
