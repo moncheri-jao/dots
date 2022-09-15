@@ -1,15 +1,15 @@
-#!/bin/bash
-#touch /tmp/ip
+#!/bin/sh
 wifi=$(ifconfig wlp1s0 | grep 'inet' | cut -d: -f2 | awk '{print $2}' | tr -d "\n")
 ethname=$(ifconfig | grep 'enp' | awk '{print $1}' | cut -d: -f1)
 if ! [ -z "$ethname" ]; then
 	eth=$(ifconfig "$ethname" | grep 'inet' | cut -d: -f2 | awk '{print $2}' | tr -d "\n")
 fi
-#sed -i '/^[[:space:]]*$/d' /tmp/ip
-if [ -z "$wifi" ] && [ -z "$eth" ]; then
+if [[ -z "$wifi" && -z "$eth" ]]; then
 	echo "disconnected"
 elif [[ -z "$eth" ]]; then
 	echo "$wifi"
 elif [[ -z "$wifi" ]]; then
 	echo "$eth"
+elif [[ "$wifi" != "" && "$eth" != "" ]]; then
+	echo "E: $eth, W: $wifi"
 fi
