@@ -5,7 +5,7 @@ revert() {
 }
 # set the icon and a temporary location for the screenshot to be stored
 #icon="$HOME/.config/i3/lock-icon.png"
-tmpbg='/tmp/screen.png'
+tmpbg="/tmp/screen.png"
 icon="$HOME/.config/i3/lock-icon.png"
 
 # take a screenshot
@@ -13,7 +13,7 @@ scrot -o "$tmpbg"
 
 
 #notify the user via the notification box
-notify-send -t 1500 -- 'Locking the screen...'
+notify-send -t 1500 -- "Locking the screen..."
 
 # blur the screenshot by resizing and scaling back up
 convert "$tmpbg" -filter Hermite -thumbnail 20% -sample 500% "$tmpbg"

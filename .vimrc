@@ -126,14 +126,15 @@
 	autocmd FileType tex nnoremap <F10> :w<Enter>:!texall<Space><c-r>%<Enter><Ins>
 " - }}}
 " -- }}}
-" -- COMMENT REMOVAL -- {{{
-	autocmd FileType tex nnoremap <C-z> :s/%/<Enter>
-	autocmd FileType tex inoremap <C-z> <Esc>:s/%/<Enter>
-	autocmd FileType tex vnoremap <C-z> :s/%/<Enter>
+" -- COMMENT -- {{{
+	autocmd FileType tex nnoremap <C-z> :s/%*//<Enter>
+	autocmd FileType tex inoremap <C-z> <Esc>:s/%*//<Enter>i
+	autocmd FileType tex vnoremap <C-z> :s/%*//<Enter>
+	autocmd FileType tex nnoremap <C-c> 0i%<Esc>
+	autocmd FileType tex inoremap <C-c> <Esc>0i%
+	autocmd FileType tex vnoremap <C-c> I%<Esc>
 " -- }}}
 " -- PDF READING -- {{{
-	"autocmd FileType tex nnoremap <leader>z :!zathura<space><c-r>%<Backspace><Backspace><Backspace>pdf &<cr><cr>
-	"autocmd FileType tex inoremap <leader>z <Esc>:!zathura<space><c-r>%<Backspace><Backspace><Backspace>pdf &<cr><cr>
 	autocmd FileType tex nnoremap <leader>z :!perlthura<space>-s<space>&<enter>
 	autocmd FileType tex inoremap <leader>z <esc>:!perlthura<space>-s<pace>&<enter>i
 	autocmd FileType tex nnoremap <leader>o :!perlthura<space>-f<space>&<enter>
@@ -143,7 +144,7 @@
 	autocmd FileType tex inoremap <C-t> \texttt{}<++><esc>T{i
 	autocmd FileType tex inoremap <M-i> \textit{}<++><esc>T{i
 	autocmd FileType tex inoremap <leader>v \vec{}<++><esc>T{i
-	autocmd FileType tex inoremap <leader>z \hat{\vec{}}<++><esc>T{i
+	autocmd FileType tex inoremap <leader>c \hat{\vec{}}<++><esc>T{i
 	autocmd FileType tex inoremap <leader>n \nabla
 	autocmd FileType tex inoremap <leader>x \cpr{}{<++>}{<++>}<++><esc>T{i<esc>T{i<esc>T{i
 	autocmd FileType tex inoremap <leader>p \psi
@@ -151,6 +152,8 @@
 	autocmd FileType tex inoremap <leader>i \int_{}^{<++>}<++>\dd^{<++>}{<++>}<esc>T{i<esc>T{i<esc>T{i<esc>T{i
 	autocmd FileType tex inoremap <leader>, \cdot
 	autocmd FileType tex inoremap <leader>' \times
+	autocmd FileType tex inoremap <leader>f \varphi
+	autocmd FileType tex inoremap <leader>r \varrho
 " -- }}}
 " -- PLACEHOLDER NAVIGATION -- {{{
 "<++>	
@@ -171,6 +174,7 @@
 	autocmd FileType tex iabbrev airy Airy
 	autocmd FileType tex iabbrev emw electromagnetic wave
 	autocmd FileType tex iabbrev emws electromagnetic waves
+	autocmd FileType tex iabbrev EMWS Electromagnetic Waves
 	autocmd FileType tex iabbrev maxwell Maxwell
 	autocmd FileType tex iabbrev hemholtz Helmholtz
 	autocmd FileType tex iabbrev Hemholtz Helmholtz
