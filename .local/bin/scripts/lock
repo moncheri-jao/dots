@@ -22,6 +22,7 @@ convert "$tmpbg" "$icon" -gravity center -composite "$tmpbg"
 
 # lock the screen with the blurred screenshot and shutdown the screen after 5s
 sleep 1
+ibus engine xkb:es:cat:cat
 trap revert HUP INT TERM
 xset +dpms dpms 10 10 10
 i3lock -n -i "$tmpbg"
