@@ -78,8 +78,8 @@
 # -- ASSIGNED WORKSPACES -- {{{
 	for_window [class="Spotify"] move to workspace $ws1
 	assign [class="Spotify"] $ws1
-	for_window [class="firefox"] move to workspace $ws2
-	assign [class="firefox"] $ws2
+	for_window [window_role="browser"] move to workspace $ws2
+	assign [window_role="browser"] $ws2
 	for_window [class="Mail"] move to workspace $ws9
 	assign [class="thunderbird"] $ws9
 # -- }}}
@@ -169,9 +169,10 @@
 # -- APPLICATIONS -- {{{
 	bindsym $mod+Return exec tilix
 	bindsym $mod+Shift+Return exec tilix --quake
-	bindsym $mod+f exec firefox
-	bindsym $mod+m exec spotify
-	bindsym $mod+Shift+q exec qutebrowser
+	#bindsym $mod+f exec firefox
+	bindsym $mod+f exec librewolf
+	bindsym $mod+m exec --no-startup-id spotify
+	bindsym $mod+Shift+q exec --no-startup-id qutebrowser
 	bindsym $mod+d exec --no-startup-id dmenu_run -sf green -nf white -fn 'Monospace 13' -i
 	bindsym $mod+l exec --no-startup-id $HOME/.local/bin/scripts/lock
 	bindsym $mod+q kill
