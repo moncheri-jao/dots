@@ -159,10 +159,10 @@
 "<++>	
 " -- }}}
 " -- SPELLCHECK -- {{{
-	autocmd FileType tex inoremap <C-s> <Esc>:setlocal spell spelllang=en_us<Enter>A
+	autocmd FileType tex inoremap <C-s> <Esc>:setlocal spell spelllang=en_us<Enter>a
 	autocmd FileType tex nnoremap <C-s> :setlocal spell spelllang=en_us<Enter>
 	autocmd FileType tex nnoremap <leader>s :setlocal spell spelllang=it<Enter>
-	autocmd FileType tex inoremap <leader>s <Esc>:setlocal spell spelllang=it<Enter>A
+	autocmd FileType tex inoremap <leader>s <Esc>:setlocal spell spelllang=it<Enter>a
 " -- }}}
 " -- ABBREVIATIONS & ALIASES -- {{{
 	" only maths abbrev
