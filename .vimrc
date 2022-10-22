@@ -136,7 +136,7 @@
 " -- }}}
 " -- PDF READING -- {{{
 	autocmd FileType tex nnoremap <leader>z :!perlthura<space>-s<space>&<enter>
-	autocmd FileType tex inoremap <leader>z <esc>:!perlthura<space>-s<pace>&<enter>i
+	autocmd FileType tex inoremap <leader>z <esc>:!perlthura<space>-s<space>&<enter>i
 	autocmd FileType tex nnoremap <leader>o :!perlthura<space>-f<space>&<enter>
 	autocmd FileType tex inoremap <leader>o <esc>:!perlthura<space>-f<space>&<enter>i
 " -- }}}
