@@ -101,8 +101,8 @@
 " --- LATEX --- {{{
 " -- BASE -- {{{
 	let g:tex_flavor="latex"
-	let g:tex_itemize_env="equation,equation*,aligned,align,matrix,pmatrix,table,tabular"
-	let g:Tex_PromptedEnvironments="equation,equation*,pmatrix,aligned,enumerate,itemize,figure,table"
+	let g:tex_itemize_env="cases,dcases,aligned,align,matrix,pmatrix,table,tabular"
+	let g:Tex_PromptedEnvironments="cases,dcases,pmatrix,aligned,enumerate,itemize,figure,table"
 " -- }}}
 " -- COMPILERS -- {{{
 " - INOREMAPS - {{{
