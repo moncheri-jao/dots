@@ -47,7 +47,7 @@ set -o vi
 # --- ALIASES --- {{{
 # -- FOLDERS -- {{{
 alias notes="cd ~/Dropbox/notes/ && ls"
-alias nt="cd ~/Dropbox/spicyphysics/ && ls"
+alias nt="cd ~/Dropbox/spicyphysics/sources && ls"
 alias emf="cd ~/Dropbox/spicyphysics/sources/electromagnetism && ls"
 alias drop="cd ~/Dropbox/ && ls"
 alias i3f="cd ~/.config/i3 && ls"
