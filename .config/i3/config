@@ -31,7 +31,7 @@
 	exec --no-startup-id xset s 300 5
 	exec --no-startup-id xss-lock $HOME/.local/bin/scripts/lock
 	exec --no-startup-id ibus-daemon -drxR
-	exec --no-startup-id setxkbmap -option "shift:both_capslock"
+#	exec --no-startup-id setxkbmap -option "shift:both_capslock"
 #	colemak-like setup for caps -> backspace
 #	exec --no-startup-id setxkbmap -option "caps:backspace"
 # --- }}}
