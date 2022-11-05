@@ -85,7 +85,7 @@ alias wre="nmcli d w re"
 alias hotspot="nmcli d w r && sleep 3 && nmcli d w con Jazz_Band_Leningrad"
 # -- }}}
 # -- FILE SHORTCUTS -- {{{
-alias nem="cd ~/Dropbox/spicyphysics/sources/electromagnetism && nvim electromagnetism.tex"
+alias nem="nvim ~/Dropbox/spicyphysics/sources/electromagnetism.tex"
 alias nqm="cd ~/Dropbox/spicyphysics/sources/quantum && nvim qm.tex"
 alias bib="cd ~/Dropbox/appunti/bibliografia/bib.bib"
 # -- }}}
