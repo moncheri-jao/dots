@@ -181,6 +181,8 @@
 	autocmd FileType tex iabbrev helmholtz Helmholtz
 	autocmd FileType tex iabbrev grf Green's function
 	autocmd FileType tex iabbrev grfs Green's functions
+	autocmd FileType tex iabbrev lhs left hand side
+	autocmd FileType tex iabbrev rhs right hand side
 "  -- }}}
 " --- }}}
 
