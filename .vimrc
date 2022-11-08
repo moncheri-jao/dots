@@ -154,9 +154,12 @@
 	autocmd FileType tex inoremap <leader>' \times
 	autocmd FileType tex inoremap <leader>f \varphi
 	autocmd FileType tex inoremap <leader>r \varrho
+	autocmd FileType tex inoremap <C-l> <esc>A<enter>\lipsum<esc>A
+	autocmd FileType tex nnoremap <C-l> <esc>A<enter>\lipsum<esc>
 " -- }}}
-" -- PLACEHOLDER NAVIGATION -- {{{
-"<++>	
+" -- LIPSUM NAVIGATION -- {{{
+	autocmd FileType tex nnoremap <M-l> /\\lipsum<enter><esc>:s/\\lipsum/<enter>i
+	autocmd FileType tex inoremap <M-l> <esc>/\\lipsum<enter><esc>:s/\\lipsum/<enter>i
 " -- }}}
 " -- SPELLCHECK -- {{{
 	autocmd FileType tex inoremap <C-s> <Esc>:setlocal spell spelllang=en_us<Enter>a
