@@ -76,12 +76,12 @@
 # - }}}
 # -- }}}
 # -- ASSIGNED WORKSPACES -- {{{
+	for_window [window_role="browser"] move to workspace $ws2
+	assign [window_role="browser"] $ws2
 	for_window [class="Spotify"] move to workspace $ws1
 	assign [class="Spotify"] $ws1
 	for_window [class="tidal-hifi"] move to workspace $ws1
 	assign [class="tidal-hifi"] $ws1
-	for_window [class="Navigator"] move to workspace $ws2
-	assign [class="Navigator"] $ws2
 	for_window [class="qutebrowser"] move to workspace $ws2
 	assign [class="qutebrowser"] $ws2
 	for_window [class="Mail"] move to workspace $ws9
@@ -182,6 +182,7 @@
 	bindsym $mod+l exec --no-startup-id $HOME/.local/bin/scripts/lock
 	bindsym $mod+q kill
 	bindsym $mod+t exec --no-startup-id thunderbird
+	bindsym $mod+Alt+m exec --no-startup-id tidal-hifi
 # -- }}}
 # -- PLAYER CONTROL -- {{{
 # - SPOTIFY - {{{
