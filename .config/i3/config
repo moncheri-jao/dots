@@ -78,8 +78,12 @@
 # -- ASSIGNED WORKSPACES -- {{{
 	for_window [class="Spotify"] move to workspace $ws1
 	assign [class="Spotify"] $ws1
-	for_window [window_role="browser"] move to workspace $ws2
-	assign [window_role="browser"] $ws2
+	for_window [class="tidal-hifi"] move to workspace $ws1
+	assign [class="tidal-hifi"] $ws1
+	for_window [class="Navigator"] move to workspace $ws2
+	assign [class="Navigator"] $ws2
+	for_window [class="qutebrowser"] move to workspace $ws2
+	assign [class="qutebrowser"] $ws2
 	for_window [class="Mail"] move to workspace $ws9
 	assign [class="thunderbird"] $ws9
 # -- }}}
@@ -172,6 +176,7 @@
 	#bindsym $mod+f exec firefox
 	bindsym $mod+f exec librewolf
 	bindsym $mod+m exec --no-startup-id spotify
+	bindsym $mod+Shift+m exec --no-startup-id tidal-hifi
 	bindsym $mod+Shift+q exec --no-startup-id qutebrowser
 	bindsym $mod+d exec --no-startup-id dmenu_run -sf green -nf white -fn 'Monospace 13' -i
 	bindsym $mod+l exec --no-startup-id $HOME/.local/bin/scripts/lock
