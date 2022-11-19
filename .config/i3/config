@@ -183,6 +183,7 @@
 	bindsym $mod+q kill
 	bindsym $mod+t exec --no-startup-id thunderbird
 	bindsym $mod+Alt+m exec --no-startup-id tidal-hifi
+	bindsym $mod+Alt+t exec transmission-qt
 # -- }}}
 # -- PLAYER CONTROL -- {{{
 # - SPOTIFY - {{{
