@@ -1,3 +1,44 @@
 #/bin/sh
 freq=$(cpupower frequency-info | grep "kernel" | cut -d: -f2 | cut -d"(" -f1 | cut -d" " -f2)
-echo "$freq"GHz
+num=${freq/\./}
+if [[ $num -ge 300 ]];
+then
+	echo "$freq"GHz
+	echo ""
+	echo "#FF0000"
+elif [[ $num -ge 290 && $num -lt 300 ]];
+then
+	echo "$freq"GHz
+	echo ""
+	echo "#FFA500"
+elif [[ $num -ge 280 && $num -lt 290 ]];
+then
+	echo "$freq"GHz
+	echo ""
+	echo "#FFA500"
+elif [[ $num -ge 270 && $num -lt 280 ]];
+then
+	echo "$freq"GHz
+	echo ""
+	echo "#FFDA29"
+elif [[ $num -ge 260 && $num -lt 270 ]];
+then
+	echo "$freq"GHz
+	echo ""
+	echo "#ADFF2F"
+elif [[ $num -ge 250 && $num -lt 260 ]];
+then
+	echo "$freq"GHz
+	echo ""
+	echo "#D6FF00"
+elif [[ $num -gt 240 && $num -lt 250 ]];
+then
+	echo "$freq"GHz
+	echo ""
+	echo "#76FF00"
+elif [[ $num -le 240 ]];
+then
+	echo "$freq"GHz
+	echo ""
+	echo "#00FF00"
+fi
