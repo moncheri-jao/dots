@@ -5,9 +5,10 @@ usage () {
 	echo "      	-r(eload) reload pywal sequences"
 	echo "      	-o rerun pywal on the previously saved background"
 	echo "      	-b use the chosen backend (default wal)"
+	echo "      	-c take the colors from the chosen image"
 	echo "     	-h(elp) show this dialog"
 }
-optstring=":hron:b:"
+optstring=":hron:b:c:"
 backend="wal"
 while getopts ${optstring} arg; do
 	case "${arg}" in
@@ -22,6 +23,8 @@ while getopts ${optstring} arg; do
 			;;
 		r) 	echo ${OPTARG}
 			cat "$HOME"/.cache/wal/sequences
+			;;
+		c) wal -i "$OPTARG" -n --saturate 1.0 --vte --backend "$backend"
 			;;
 		h)  usage
 			;;	    

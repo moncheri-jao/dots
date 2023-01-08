@@ -147,8 +147,6 @@
 	autocmd FileType tex inoremap <leader>c \hat{\vec{}}<++><esc>T{i
 	autocmd FileType tex inoremap <leader>n \nabla
 	autocmd FileType tex inoremap <leader>x \cpr{}{<++>}{<++>}<++><esc>T{i<esc>T{i<esc>T{i
-	autocmd FileType tex inoremap <leader>p \psi
-	autocmd FileType tex inoremap <leader>P \Psi
 	autocmd FileType tex inoremap <leader>i \int_{}^{<++>}<++>\dd^{<++>}{<++>}<esc>T{i<esc>T{i<esc>T{i<esc>T{i
 	autocmd FileType tex inoremap <leader>, \cdot
 	autocmd FileType tex inoremap <leader>' \times
@@ -186,6 +184,8 @@
 	autocmd FileType tex iabbrev grfs Green's functions
 	autocmd FileType tex iabbrev lhs left hand side
 	autocmd FileType tex iabbrev rhs right hand side
+	autocmd FileType tex iabbrev wrt with respect to
+	autocmd FileType tex iabbrev Wrt With respect to
 "  -- }}}
 " --- }}}
 
