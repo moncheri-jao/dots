@@ -159,7 +159,9 @@
 	bindsym $mod+a focus parent
 # -- }}}
 # -- ASSIGNED CONTAINER STATES -- {{{
-	for_window [class = "XTerm"] floating enable
+	for_window [window_role="pop_up"] floating enable
+	for_window [window_role="task_dialog"] floating enable
+	for_window [class="timer"] floating enable
 # }}}
 # --- }}}
 
@@ -185,7 +187,7 @@
 	bindsym $mod+l exec --no-startup-id $HOME/.local/bin/scripts/lock
 	bindsym $mod+q kill
 	bindsym $mod+Shift+t exec --no-startup-id thunderbird
-	bindsym $mod+t exec --no-startup-id xterm -e termdown -a
+	bindsym $mod+t exec --no-startup-id kitty --class timer termdown
 	bindsym $mod+Alt+m exec --no-startup-id tidal-hifi
 	bindsym $mod+Alt+t exec transmission-qt
 # -- }}}

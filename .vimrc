@@ -147,7 +147,7 @@
 	autocmd FileType tex inoremap <leader>c \hat{\vec{}}<++><esc>T{i
 	autocmd FileType tex inoremap <leader>n \nabla
 	autocmd FileType tex inoremap <leader>x \cpr{}{<++>}{<++>}<++><esc>T{i<esc>T{i<esc>T{i
-	autocmd FileType tex inoremap <leader>i \int_{}^{<++>}<++>\dd^{<++>}{<++>}<esc>T{i<esc>T{i<esc>T{i<esc>T{i
+	autocmd FileType tex inoremap <leader>i \int_{}^{<++>}<++>\dd^{<++>}{<++>}<++><esc>T{i<esc>T{i<esc>T{i<esc>T{i
 	autocmd FileType tex inoremap <leader>, \cdot
 	autocmd FileType tex inoremap <leader>' \times
 	autocmd FileType tex inoremap <leader>f \varphi
