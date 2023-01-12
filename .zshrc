@@ -26,7 +26,7 @@ fi
 ZSH_THEME="drunkfox"
 # restore pywal colorscheme
 #cat $HOME/.cache/wal/sequences
-wal.paper -r
+wal.paper -s
 # oh-my-zsh loadup
 plugins=(git zsh-autosuggestions history-substring-search zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
@@ -48,6 +48,7 @@ set -o vi
 # -- FOLDERS -- {{{
 alias notes="cd ~/Dropbox/notes/ && ls"
 alias nt="cd ~/Dropbox/spicyphysics/sources && ls"
+alias nthw="cd ~/Dropbox/spicyphysics/handwritten && ls"
 alias emf="cd ~/Dropbox/spicyphysics/sources/electromagnetism && ls"
 alias drop="cd ~/Dropbox/ && ls"
 alias i3f="cd ~/.config/i3 && ls"

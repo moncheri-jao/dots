@@ -2,33 +2,51 @@
 usage () {
 	echo "set a new background for i3 with pywal"
 	echo "USAGE:	-n(ew) set a new background"
-	echo "      	-r(eload) reload pywal sequences"
-	echo "      	-o rerun pywal on the previously saved background"
-	echo "      	-b use the chosen backend (default wal)"
-	echo "      	-c take the colors from the chosen image"
-	echo "     	-h(elp) show this dialog"
+	echo "		-r(eload) reload pywal sequences"
+	echo "		-o rerun pywal on the previously logged background"
+	echo "		-b(ackend) use the chosen backend (default wal)"
+	echo "		-c(olors) take the colors from the chosen image"
+	echo "		-l(og) set a new background and log the filepath"
+	echo "		-s(et) set the colors from a logged background but load the previous background"
+	echo "		-h(elp) show this dialog"
 }
-optstring=":hron:b:c:"
+optstring=":hron:l:b:c:s"
 backend="wal"
 while getopts ${optstring} arg; do
 	case "${arg}" in
-		b)  backend=$OPTARG
+		b)	
+			backend=$OPTARG
 			;;
-		n)  cp "$OPTARG" "$HOME/.config/i3/background"
+		n)	
+			cp "$OPTARG" "$HOME/.config/i3/background"
 			convert "$HOME/.config/i3/background" "$HOME/.config/i3/background.png"
 			rm "$HOME/.config/i3/background"
 			wal -i "$HOME/.config/i3/background.png" --saturate 1.0 --vte --backend "$backend"
 			;;
-		o)  wal -i "$HOME/.config/i3/background.png" --saturate 1.0 --vte --backend "$backend"
+		l)	
+			cp "$OPTARG" "$HOME/.config/i3/background"
+			convert "$HOME/.config/i3/background" "$HOME/.config/i3/background.png"
+			rm "$HOME/.config/i3/background"
+			wal -i "$HOME/.config/i3/background.png" --saturate 1.0 --vte --backend "$backend"
+			cp "$HOME"/.cache/wal/sequences "$HOME"/.local/logs/lastbg.log
 			;;
-		r) 	echo ${OPTARG}
+		o)	
+			wal -i "$HOME/.config/i3/background.png" --saturate 1.0 --vte --backend "$backend"
+			;;
+		s)	
+			cat "$HOME"/.local/logs/lastbg.log
+			;;
+		r) 	
 			cat "$HOME"/.cache/wal/sequences
 			;;
-		c) wal -i "$OPTARG" -n --saturate 1.0 --vte --backend "$backend"
+		c)	
+			wal -i "$OPTARG" -n --saturate 1.0 --vte --backend "$backend"
 			;;
-		h)  usage
+		h)	
+			usage
 			;;	    
-		*)  usage
+		*)  
+			usage
 			;;  
 	esac
 done
