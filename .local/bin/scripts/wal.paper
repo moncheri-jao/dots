@@ -1,16 +1,18 @@
 #!/bin/bash
 usage () {
 	echo "set a new background for i3 with pywal"
-	echo "USAGE:	-n(ew) set a new background"
+	echo "USAGE:		-n(ew) set a new background with the associated colorscheme"
+	echo "		-N(ew) set a new background and log the colorscheme"
+	echo "		-k(eep) keep the logged colorscheme but change background"
+	echo "		-c(olors) take the colorscheme without changing background"
+	echo "		-l(og) log the colorscheme of the chosen image"
 	echo "		-r(eload) reload pywal sequences"
-	echo "		-o rerun pywal on the previously logged background"
+	echo "		-s(et) reload the logged colorscheme"
+	echo "		-R(erun) rerun pywal on the background"
 	echo "		-b(ackend) use the chosen backend (default wal)"
-	echo "		-c(olors) take the colors from the chosen image"
-	echo "		-l(og) set a new background and log the filepath"
-	echo "		-s(et) set the colors from a logged background but load the previous background"
 	echo "		-h(elp) show this dialog"
 }
-optstring=":hron:l:b:c:s"
+optstring="n:N:l:b:c:k:Rshro"
 backend="wal"
 while getopts ${optstring} arg; do
 	case "${arg}" in
@@ -18,19 +20,26 @@ while getopts ${optstring} arg; do
 			backend=$OPTARG
 			;;
 		n)	
+			wal -i "$OPTARG" --saturate 1.0 --vte --backend "$backend"
 			cp "$OPTARG" "$HOME/.config/i3/background"
 			convert "$HOME/.config/i3/background" "$HOME/.config/i3/background.png"
 			rm "$HOME/.config/i3/background"
-			wal -i "$HOME/.config/i3/background.png" --saturate 1.0 --vte --backend "$backend"
 			;;
-		l)	
+		N)	
+			wal -i "$OPTARG" --saturate 1.0 --vte --backend "$backend"
 			cp "$OPTARG" "$HOME/.config/i3/background"
 			convert "$HOME/.config/i3/background" "$HOME/.config/i3/background.png"
 			rm "$HOME/.config/i3/background"
-			wal -i "$HOME/.config/i3/background.png" --saturate 1.0 --vte --backend "$backend"
 			cp "$HOME"/.cache/wal/sequences "$HOME"/.local/logs/lastbg.log
 			;;
-		o)	
+		k)
+			wal -i "$OPTARG" --saturate 1.0 --vte --backend "$backend"
+			cp "$OPTARG" "$HOME/.config/i3/background"
+			convert "$HOME/.config/i3/background" "$HOME/.config/i3/background.png"
+			rm "$HOME/.config/i3/background"
+			cat "$HOME"/.local/logs/lastbg.log
+			;;
+		R)	
 			wal -i "$HOME/.config/i3/background.png" --saturate 1.0 --vte --backend "$backend"
 			;;
 		s)	
@@ -41,6 +50,10 @@ while getopts ${optstring} arg; do
 			;;
 		c)	
 			wal -i "$OPTARG" -n --saturate 1.0 --vte --backend "$backend"
+			;;
+		l)
+			wal -i "$OPTARG" -n --saturate 1.0 --vte --backend "$backend"
+			cp "$HOME"/.cache/wal/sequences "$HOME"/.local/logs/lastbg.log
 			;;
 		h)	
 			usage
