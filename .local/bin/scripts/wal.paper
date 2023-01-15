@@ -9,38 +9,40 @@ usage () {
 	echo "		-r(eload) reload pywal sequences"
 	echo "		-s(et) reload the logged colorscheme"
 	echo "		-R(erun) rerun pywal on the background"
+	echo "		-S(tartup) set the background and get the logged colorscheme"
 	echo "		-b(ackend) use the chosen backend (default wal)"
 	echo "		-h(elp) show this dialog"
 }
-optstring="n:N:l:b:c:k:Rshro"
+optstring="n:N:l:b:c:k:RSshro"
 backend="wal"
+saturation=1.0
 while getopts ${optstring} arg; do
 	case "${arg}" in
 		b)	
 			backend=$OPTARG
 			;;
 		n)	
-			wal -i "$OPTARG" --saturate 1.0 --vte --backend "$backend"
+			wal -i "$OPTARG" --saturate "$saturation" --vte --backend "$backend"
 			cp "$OPTARG" "$HOME/.config/i3/background"
 			convert "$HOME/.config/i3/background" "$HOME/.config/i3/background.png"
 			rm "$HOME/.config/i3/background"
 			;;
 		N)	
-			wal -i "$OPTARG" --saturate 1.0 --vte --backend "$backend"
+			wal -i "$OPTARG" --saturate "$saturation" --vte --backend "$backend"
 			cp "$OPTARG" "$HOME/.config/i3/background"
 			convert "$HOME/.config/i3/background" "$HOME/.config/i3/background.png"
 			rm "$HOME/.config/i3/background"
 			cp "$HOME"/.cache/wal/sequences "$HOME"/.local/logs/lastbg.log
 			;;
 		k)
-			wal -i "$OPTARG" --saturate 1.0 --vte --backend "$backend"
+			wal -i "$OPTARG" --saturate "$saturation" --vte --backend "$backend"
 			cp "$OPTARG" "$HOME/.config/i3/background"
 			convert "$HOME/.config/i3/background" "$HOME/.config/i3/background.png"
 			rm "$HOME/.config/i3/background"
 			cat "$HOME"/.local/logs/lastbg.log
 			;;
 		R)	
-			wal -i "$HOME/.config/i3/background.png" --saturate 1.0 --vte --backend "$backend"
+			wal -i "$HOME/.config/i3/background.png" --saturate "$saturation" --vte --backend "$backend"
 			;;
 		s)	
 			cat "$HOME"/.local/logs/lastbg.log
@@ -49,10 +51,10 @@ while getopts ${optstring} arg; do
 			cat "$HOME"/.cache/wal/sequences
 			;;
 		c)	
-			wal -i "$OPTARG" -n --saturate 1.0 --vte --backend "$backend"
+			wal -i "$OPTARG" -n --saturate "$saturation" --vte --backend "$backend"
 			;;
 		l)
-			wal -i "$OPTARG" -n --saturate 1.0 --vte --backend "$backend"
+			wal -i "$OPTARG" -n --saturate "$saturation" --vte --backend "$backend"
 			cp "$HOME"/.cache/wal/sequences "$HOME"/.local/logs/lastbg.log
 			;;
 		h)	

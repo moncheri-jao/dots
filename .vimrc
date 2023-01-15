@@ -175,7 +175,9 @@
 	autocmd FileType tex iabbrev airy Airy
 	autocmd FileType tex iabbrev emw electromagnetic wave
 	autocmd FileType tex iabbrev emws electromagnetic waves
-	autocmd FileType tex iabbrev EMWS Electromagnetic Waves
+	autocmd FileType tex iabbrev Emws Electromagnetic waves
+	autocmd FileType tex iabbrev ems electromagnetic spectrunm
+	autocmd FileType tex iabbrev Ems Electromagnetic spectrum
 	autocmd FileType tex iabbrev maxwell Maxwell
 	autocmd FileType tex iabbrev hemholtz Helmholtz
 	autocmd FileType tex iabbrev Hemholtz Helmholtz
