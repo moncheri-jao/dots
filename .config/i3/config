@@ -31,9 +31,11 @@
 	exec --no-startup-id xset s 300 5
 	exec --no-startup-id xss-lock $HOME/.local/bin/scripts/lock
 	exec --no-startup-id ibus-daemon -drxR
-#	exec --no-startup-id setxkbmap -option "shift:both_capslock"
+#	double shift for caps
+	exec setxkbmap -option "shift:both_capslock"
 #	colemak-like setup for caps -> backspace
-#	exec --no-startup-id setxkbmap -option "caps:backspace"
+	exec setxkbmap -option "caps:backspace"
+	exec xmodmap -e "keycode 66 = BackSpace BackSpace BackSpace"
 # --- }}}
 
 # --- WORKSPACES --- {{{
@@ -84,8 +86,10 @@
 	assign [class="tidal-hifi"] $ws10
 	for_window [class="qutebrowser"] move to workspace $ws9
 	assign [class="qutebrowser"] $ws9
-	for_window [class="Mail"] move to workspace $ws8
-	assign [class="thunderbird"] $ws8
+	for_window [class="Mail"] move to workspace $ws7
+	assign [class="thunderbird"] $ws7
+	for_window [class="discord"] move to workspace $ws8
+	assign [class="discord"] $ws8
 # -- }}}
 # --- }}}
 

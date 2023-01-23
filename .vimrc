@@ -101,8 +101,8 @@
 " --- LATEX --- {{{
 " -- BASE -- {{{
 	let g:tex_flavor="latex"
-	let g:tex_itemize_env="cases,dcases,aligned,align,matrix,pmatrix,table,tabular"
-	let g:Tex_PromptedEnvironments="cases,dcases,pmatrix,aligned,enumerate,itemize,figure,table"
+	let g:tex_itemize_env="figure,paligned,cases,dcases,pmatrix,aligned,align,matrix,pmatrix,table,tabular"
+	let g:Tex_PromptedEnvironments="dcases,pmatrix,aligned,paligned,enumerate,itemize,figure,table"
 " -- }}}
 " -- COMPILERS -- {{{
 " - INOREMAPS - {{{
@@ -155,6 +155,7 @@
 	autocmd FileType tex inoremap <leader>r \varrho
 	autocmd FileType tex inoremap <C-l> <esc>A<enter>\lipsum<esc>A
 	autocmd FileType tex nnoremap <C-l> <esc>A<enter>\lipsum<esc>
+	autocmd FileType tex inoremap <C-h> \hbar
 " -- }}}
 " -- LIPSUM NAVIGATION -- {{{
 	autocmd FileType tex nnoremap <M-l> /\\lipsum<enter><esc>:s/\\lipsum/<enter>i
@@ -189,6 +190,10 @@
 	autocmd FileType tex iabbrev rhs right hand side
 	autocmd FileType tex iabbrev wrt with respect to
 	autocmd FileType tex iabbrev Wrt With respect to
+	autocmd FileType tex iabbrev pde partial differential equation
+	autocmd FileType tex iabbrev Pde Partial differential equation
+	autocmd FileType tex iabbrev pdes partial differential equations
+	autocmd FileType tex iabbrev Pdes Partial differential equations
 "  -- }}}
 " --- }}}
 
