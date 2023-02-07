@@ -38,7 +38,7 @@
 " --- BASE SETTINGS --- {{{
 " -- LEADER -- {{{
 	"let mapleader ="\º"
-	let mapleader = "\."
+	let mapleader = "\»"
 	let ttimeoutlen=500
 " -- }}}
 " -- FUNCTIONS -- {{{
@@ -103,6 +103,7 @@
 	let g:tex_flavor="latex"
 	let g:tex_itemize_env="figure,paligned,cases,dcases,pmatrix,aligned,align,matrix,pmatrix,table,tabular"
 	let g:Tex_PromptedEnvironments="dcases,pmatrix,aligned,paligned,enumerate,itemize,figure,table"
+	let g:Tex_Leader = '«'
 " -- }}}
 " -- COMPILERS -- {{{
 " - INOREMAPS - {{{

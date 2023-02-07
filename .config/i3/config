@@ -32,10 +32,10 @@
 	exec --no-startup-id xss-lock $HOME/.local/bin/scripts/lock
 	exec --no-startup-id ibus-daemon -drxR
 #	double shift for caps
-	exec setxkbmap -option "shift:both_capslock"
+#	exec setxkbmap -option "shift:both_capslock"
 #	colemak-like setup for caps -> backspace
-	exec setxkbmap -option "caps:backspace"
-	exec xmodmap -e "keycode 66 = BackSpace BackSpace BackSpace"
+#	exec setxkbmap -option "caps:backspace"
+#	exec xmodmap -e "keycode 66 = BackSpace BackSpace BackSpace"
 # --- }}}
 
 # --- WORKSPACES --- {{{
