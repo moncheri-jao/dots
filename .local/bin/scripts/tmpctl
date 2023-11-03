@@ -1,5 +1,5 @@
-#/bin/bash
-temp=$(sensors | grep -i "edge" | cut -d"+" -f2 | cut -d" " -f1)
+#!/bin/bash
+temp=$(sensors coretemp-isa-0000 | grep -i "Package id 0:" | cut -d"+" -f2 | cut -d" " -f1)
 dec=${temp::-4}
 if [[ $dec -ge 80 ]];
 then

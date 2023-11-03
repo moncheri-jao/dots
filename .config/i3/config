@@ -13,7 +13,8 @@
 	set $mod Mod4
 	set $sup Mod1
 	#font pango:ProggyCleanTTSZ 14
-	font pango:basis33 14
+	#font pango:basis33 14
+	font pango:unifont 11
 	set $refresh_i3status killall -SIGUSR1 i3status
 	bindsym $mod+Shift+c reload
 	bindsym $mod+Shift+r restart
@@ -21,18 +22,25 @@
 # --- }}}
 
 # --- STARTUP --- {{{
+	exec --no-startup-id timedatectl --adjust-system-clock
 	exec --no-startup-id dex --autostart --environment i3
-	exec --no-startup-id wal.paper -o
-	exec xcompmgr -cfn
+	exec --no-startup-id volumectl toggle && $refresh_i3status
+	exec --no-startup-id feh --bg-fill ~/.config/i3/background.png
+	exec --no-startup-id xinput set-prop 11 344 1
+	exec --no-startup-id xinput set-prop 11 357 1
+#	exec --no-startup-id xinput set-prop 11 312 1 && xinput set-prop 11 325 1
+	exec --no-startup-id xcompmgr -cfn
 	exec --no-startup-id redshift
+	exec --no-startup-id openrgb -p red50
 	exec --no-startup-id dropbox
 	exec --no-startup-id nm-applet
 	exec --no-startup-id picom -b
-	exec --no-startup-id xset s 300 5
+	exec --no-startup-id xset s 600 5
 	exec --no-startup-id xss-lock $HOME/.local/bin/scripts/lock
 	exec --no-startup-id ibus-daemon -drxR
 #	double shift for caps
-#	exec setxkbmap -option "shift:both_capslock"
+	exec setxkbmap -option "shift:both_capslock"
+	exec ibus engine xkb:us:colemak_dh:eng
 #	colemak-like setup for caps -> backspace
 #	exec setxkbmap -option "caps:backspace"
 #	exec xmodmap -e "keycode 66 = BackSpace BackSpace BackSpace"
@@ -90,6 +98,8 @@
 	assign [class="thunderbird"] $ws7
 	for_window [class="discord"] move to workspace $ws8
 	assign [class="discord"] $ws8
+	for_window [class="Microsoft Teams - Preview"]  move to workspace $ws6
+	assign [class="Microsoft Teams - Preview"] $ws6
 # -- }}}
 # --- }}}
 
@@ -182,18 +192,18 @@
 # -- APPLICATIONS -- {{{
 	bindsym $mod+Return exec tilix
 	bindsym $mod+Shift+Return exec tilix --quake
-	#bindsym $mod+f exec firefox
-	bindsym $mod+f exec librewolf
+	bindsym $mod+f exec firefox
+	#bindsym $mod+f exec librewolf
 	bindsym $mod+m exec --no-startup-id spotify
 	bindsym $mod+Shift+m exec --no-startup-id tidal-hifi
 	bindsym $mod+Shift+q exec --no-startup-id qutebrowser
 	bindsym $mod+d exec --no-startup-id dmenu_run -sf green -nf white -fn 'Monospace 13' -i
 	bindsym $mod+l exec --no-startup-id $HOME/.local/bin/scripts/lock
 	bindsym $mod+q kill
-	bindsym $mod+Shift+t exec --no-startup-id thunderbird
-	bindsym $mod+t exec --no-startup-id kitty --class timer termdown
-	bindsym $mod+Alt+m exec --no-startup-id tidal-hifi
-	bindsym $mod+Alt+t exec transmission-qt
+	bindsym $mod+t exec --no-startup-id thunderbird
+	bindsym $mod+Shift+t exec --no-startup-id teams
+	bindsym $mod+$sup+t exec --no-startup-id kitty --class timer termdown
+	bindsym $mod+$sup+m exec --no-startup-id tidal-hif
 # -- }}}
 # -- PLAYER CONTROL -- {{{
 # - SPOTIFY - {{{
@@ -212,15 +222,14 @@
 # --- }}}
 
 # --- BAR --- {{{
-	#bar {
-		#position top
-		#status_command i3status
-	#	status_command i3blocks
-		#output primary
-		#separator_symbol "||"
-	#}
 	bar {
 		position top
+	#	status_command i3status
 		status_command i3blocks
+	#	output primary
 	}
+#	bar {
+#		position top
+#		status_command i3blocks
+#	}
 # --- }}}

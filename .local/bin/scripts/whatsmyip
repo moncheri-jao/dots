@@ -1,6 +1,6 @@
 #!/bin/sh
-wifi=$(ifconfig wlp1s0 | grep 'inet' | cut -d: -f2 | awk '{print $2}' | tr -d "\n")
-ethname=$(ifconfig | grep 'enp' | awk '{print $1}' | cut -d: -f1)
+wifi=$(ifconfig wlo1 | grep 'inet' | cut -d: -f2 | awk '{print $2}' | tr -d "\n")
+ethname=$(ifconfig | grep 'enp' | grep 'RUNNING' | awk '{print $1}' | cut -d: -f1)
 if ! [ -z "$ethname" ]; then
 	eth=$(ifconfig "$ethname" | grep 'inet' | cut -d: -f2 | awk '{print $2}' | tr -d "\n")
 fi

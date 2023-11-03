@@ -32,9 +32,7 @@ plugins=(git zsh-autosuggestions history-substring-search zsh-syntax-highlightin
 source $ZSH/oh-my-zsh.sh
 zstyle ':omz:update' mode auto #(disabled/reminder)
 # neofetch startup
-#neofetch --kernel_shorthand off --disk_percent on --memory_percent on --underline on --undeline_char = --ascii_bold on --os_arch off --uptime_shorthand tiny --package_managers tiny
-#archey4
-fastfetch
+neofetch --kernel_shorthand off --disk_percent on --memory_percent on --underline on --undeline_char = --ascii_bold on --os_arch off --uptime_shorthand tiny --package_managers tiny
 ## -- EDITOR -- {{{
 if [[ -n $SSH_CONNECTION ]]; then
 	export EDITOR='nvim'
@@ -65,7 +63,6 @@ alias cmds="cd ~/.local/bin/sys && ls"
 alias zshrc="$EDITOR ~/.zshrc"
 alias i3rc="$EDITOR ~/.config/i3/config"
 alias vimrc="$EDITOR ~/.vimrc"
-alias nvimrc="$EDITOR ~/.config/nvim/init.vim"
 alias texrc="$EDITOR ~/.vim/plugged/vim-latex/ftplugin/latex-suite/texrc"
 alias statusrc="$EDITOR ~/.config/i3status/config"
 alias picomrc="$EDITOR ~/.config/picom/picom.conf"
@@ -90,7 +87,7 @@ alias performance="sudo cpupower frequency-set -g performance"
 alias schedutil="sudo cpupower frequency-set -g schedutil"
 alias clean="clear && neofetch"
 alias wre="nmcli d w re"
-alias hotspot="nmcli d w r && sleep 3 && nmcli d w con Kosmos-188"
+alias hotspot="nmcli d w r && sleep 3 && nmcli d w con Jazz_Band_Leningrad"
 # -- }}}
 # -- FILE SHORTCUTS -- {{{
 alias nem="nvim ~/Dropbox/spicyphysics/sources/electromagnetism/electromagnetism.tex"

@@ -5,9 +5,8 @@ bookcreate() {
 		mkdir -p "$(pwd)/$name/chapters"
 		mkdir "$(pwd)/$name/images"
 		mkdir "$(pwd)/$name/resources"
-		mkdir "$(pwd)/$name/title"
-		cp "$HOME"/Templates/base/base.tex "$(pwd)"/"$name"/"$name".tex
-		cp "$HOME"/Templates/base/newchapter.tex "$(pwd)"/"$name"/chapters/newchapter.tex
+		cp "$HOME"/templates/latex/base/base.tex "$(pwd)"/"$name"/"$name".tex
+		cp "$HOME"/templates/latex/base/newchapter.tex "$(pwd)"/"$name"/chapters/newchapter.tex
 		sed -i 's/..\/<++>/..\/'"$name"'/g' "$(pwd)"/"$name"/chapters/newchapter.tex
 	else
 		echo "there exists already a book with that name"
@@ -18,26 +17,26 @@ maketitle () {
 	mkdir $(pwd)/$name/title
 	if [ -n "$lang" ]; then
 		if [ "$lang" = "en" ]; then
-			cp "$HOME"/Templates/title/en/title.tex "$(pwd)"/"$name"/title/title.tex
-			cp "$HOME"/Templates/title/en/frontispice.tex "$(pwd)"/"$name"/title/frontispice.tex
+			cp "$HOME"/templates/latex/title/en/title.tex "$(pwd)"/"$name"/title/title.tex
+			cp "$HOME"/templates/latex/title/en/frontispice.tex "$(pwd)"/"$name"/title/frontispice.tex
 			sed -i 's/..\/<++>\/../'"$name"'.tex/g' "$(pwd)"/"$name"/title/title.tex
 			sed -i 's/..\/<++>\/../'"$name"'.tex/g' "$(pwd)"/"$name"/title/frontispice.tex
 		elif [ "$lang" = "it" ]; then
-			cp "$HOME"/Templates/title/it/title.tex "$(pwd)"/"$name"/title/title.tex
-			cp "$HOME"/Templates/title/it/frontispice.tex "$(pwd)"/"$name"/title/frontispice.tex
+			cp "$HOME"/templates/latex/title/it/title.tex "$(pwd)"/"$name"/title/title.tex
+			cp "$HOME"/templates/latex/title/it/frontispice.tex "$(pwd)"/"$name"/title/frontispice.tex
 			sed -i 's/..\/<++>/..\/'"$name"'.tex/g' "$(pwd)"/"$name"/title/title.tex
 			sed -i 's/..\/<++>/..\/'"$name"'.tex/g' "$(pwd)"/"$name"/title/frontispice.tex
 		else
 			echo "the language inserted is not supported, using the english version"
-			cp "$HOME"/Templates/title/en/title.tex "$(pwd)"/"$name"/title/title.tex
-			cp "$HOME"/Templates/title/en/frontispice.tex "$(pwd)"/"$name"/title/frontispice.tex
+			cp "$HOME"/templates/latex/title/en/title.tex "$(pwd)"/"$name"/title/title.tex
+			cp "$HOME"/templates/latex/title/en/frontispice.tex "$(pwd)"/"$name"/title/frontispice.tex
 			sed -i 's/..\/<++>/..\/'"$name"'.tex/g' "$(pwd)"/"$name"/title/title.tex
 			sed -i 's/..\/<++>/..\/'"$name"'.tex/g' "$(pwd)"/"$name"/title/frontispice.tex
 		fi
 	else
 		echo "language not selected, using the english version"
-		cp "$HOME"/Templates/title/en/title.tex "$(pwd)"/"$2"/title/title.tex
-		cp "$HOME"/Templates/title/en/frontispice.tex "$(pwd)"/"$name"/title/frontispice.tex
+		cp "$HOME"/templates/latex/title/en/title.tex "$(pwd)"/"$2"/title/title.tex
+		cp "$HOME"/templates/latex/title/en/frontispice.tex "$(pwd)"/"$name"/title/frontispice.tex
 		sed -i 's/..\/<++>/..\/'"$name"'.tex/g' "$(pwd)"/"$name"/title/title.tex
 		sed -i 's/..\/<++>/..\/'"$name"'.tex/g' "$(pwd)"/"$name"/title/frontispice.tex
 	fi
@@ -61,7 +60,7 @@ titlecolor() {
 	if [ "$opt" = 1 ]; then
 		sed -i 's/\%\\usepackage{sapienza}/\\usepackage{sapienza}/g' "$(pwd)"/"$name"/"$name".tex
 		#rm "$(pwd)"/"$name"/"$name".tex
-		#cp "$HOME"/Templates/base/sapienza.tex "$(pwd)"/"$name"/"$name".tex
+		#cp "$HOME"/templates/latex/base/sapienza.tex "$(pwd)"/"$name"/"$name".tex
 	fi
 }
 helpf() {
@@ -73,23 +72,6 @@ helpf() {
 	echo "				-h 		Prints this help section"
 	echo "				--sapienza	Optional argument for changing the color of equations and the titlepage to the official color of Sapienza Università"
 }
-optstring="n:l:shv:"
-#while getopts ${optstring} arg; do
-#	case "${arg}" in
-#		n) name=$OPTARG
-#			;;
-#		l) lang=$OPTARG
-#			;;
-#		v) ver=$OPTARG
-#			;;
-#		s) opt=1
-#			;;
-#		h) helpf
-#			;;
-#		*) helpf
-#			;;
-#	esac
-#done
 if [[ -n $1 ]]; then
 	case $1 in
 		-n)

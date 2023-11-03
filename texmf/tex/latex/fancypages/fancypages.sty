@@ -1,5 +1,7 @@
 \RequirePackage{physics}
 \RequirePackage{subfiles}
+\RequirePackage{caption}
+\RequirePackage{subcaption}
 \RequirePackage[]{csquotes}
 \RequirePackage[no-math]{fontspec}
 \RequirePackage{amsthm, mathtools, amssymb, amsfonts}
@@ -9,6 +11,7 @@
 \RequirePackage[]{graphicx}
 \graphicspath{{./images/}}
 \RequirePackage{tikz}
+\RequirePackage{slashed}
 \RequirePackage{float}
 \RequirePackage{fancyhdr}
 \RequirePackage{titlesec}
@@ -18,12 +21,21 @@
 \RequirePackage{verbatim}
 \RequirePackage{etoolbox}
 \RequirePackage{pgfplots}
+\RequirePackage{tikzorbital}
+\RequirePackage{chemfig}
+\RequirePackage{tikz}
+\usetikzlibrary{patterns}
+\usetikzlibrary{decorations}
+\usetikzlibrary{calc}
+\RequirePackage[compat=1.1.0]{tikz-feynman}
+\RequirePackage{dsfont}
+\RequirePackage[]{tipa}
 \usepgflibrary{fpu}
 %\RequirePackage{siunitx}
 \RequirePackage[style=alphabetic]{biblatex}
-\addbibresource{~/Dropbox/appunti/bibliografia/bib.bib}
+\addbibresource{~/Dropbox/notes/bibliografia/bib.bib}
 \RequirePackage[colorlinks=true,linkcolor=black,urlcolor=red,citecolor=blue]{hyperref}%
-\setcounter{tocdepth}{4}
+\setcounter{tocdepth}{2}
 \setcounter{secnumdepth}{4}
 \setlength{\headheight}{13.6pt}
 \fancyhf{}
@@ -39,20 +51,26 @@
 \definecolor{sapienza}{cmyk}{.10,1.00,.61,.50}
 % EN %
 %%
-\newtheorem{thm}{Theorem}[chapter]
+\theoremstyle{theorem}
+\newtheorem{thm}{\texttt{T H E O R E M }}[chapter]
+\newtheorem{exe}{\texttt{E X E R C I S E }}[section]
 \theoremstyle{definition}
 \newtheorem{prop}{Proposition}
 \newtheorem{lem}{Lemma}[section]
 \newtheorem{dfn}{Definition}[section]
 \newtheorem{cor}{Corollary}[section]
 \newtheorem{hyp}{Hypothesis}
-\newtheorem{exe}{Exercise}[section]
 \newtheorem{mtd}{Method}
 \newtheorem*{ntn}{Notation}
 \newtheorem*{pri}{Principle}
 \theoremstyle{remark}
 \newtheorem{eg}{Example}[section]
+\newtheorem{prob}{\texttt{P R O B L E M }}[section]
+\newtheorem*{sol}{\texttt{S O L U T I O N}}
 \newtheorem*{rmk}{Remark}
+\newtheorem{pos}{Postulate}
+\newtheorem{defn}{Definition}[section]
+\newtheorem{law}{Law}
 %%
 \DeclareMathOperator{\F}{\mathbb{F}}
 \DeclareMathOperator{\R}{\mathbb{R}}
@@ -77,8 +95,49 @@
 \newcommand{\ver}[1]{\hat{\mathbf{#1}}}
 \newcommand{\unit}[1]{\ \mathrm{#1}}
 \newcommand{\cc}[1]{\overline{#1}}
-\renewcommand{\emph}[1]{\textit{#1}}
+\renewcommand{\emph}[1]{<<\textit{#1}>>}
 \newcommand{\explain}[1]{<<#1>>}
 \newcommand{\adj}[2][]{#2^{\dagger#1}}
+\newcommand{\tpdv}[4][]{\left( \pdv[#1]{#2}{#3}\right)_{#4}}
+\newcommand{\dbar}{\mathrm{d}\hspace*{-0.08em}\bar{}\hspace*{0.1em}}
+% --- QM {{{
+\renewcommand{\vec}[1]{\underline{#1}}
+\renewcommand{\trace}{\mathrm{Tr}}
+\newcommand{\1}{\opr{\mathds{1}}}
+\newcommand{\lbar}{\mbox{\textipa\textcrlambda}}
+\renewcommand{\unit}[1]{\ \mathrm{#1}}
+\newcommand{\diff}[2][]{\ \mathrm{d}^{#1}#2}
+\newcommand{\ddiff}[3][]{\ \mathrm{d}^{#1}#2\mathrm{d}^{#1}#3}
+\newcommand{\dddiff}[4][]{\ \mathrm{d}^{#1}#2\mathrm{d}^{#1}#3\mathrm{d}^{#1}#4}
+\newcommand{\ham}{\mathcal{H}}
+\newcommand{\opr}[1]{\hat{#1}}
+\newcommand{\tposed}[1]{#1^{\text{T}}}
+\newcommand{\pcomm}[2]{\comm{#1}{#2}_{PB}}
+\newcommand{\Ut}{\opr{\mathcal{U}}}
+\newcommand{\pot}{\mathcal{U}}
+\newcommand{\lc}[1]{\epsilon_{#1}}
+\newcommand{\kd}[1]{\delta_{#1}}
+\newcommand{\kdopr}[1]{\opr{\delta}_{#1}}
+\newcommand{\mc}[1]{\mathcal{#1}}
+\newcommand{\ladopru}[1]{\opr{#1}_{+}}
+\newcommand{\ladoprd}[1]{\opr{#1}_{-}}
+\newcommand{\ladoprpm}[1]{\opr{#1}_{\pm}}
+\newcommand{\vecopr}[1]{\opr{\vec{#1}}}
+\newcommand{\up}{\uparrow}
+\newcommand{\down}{\downarrow}
+\newcommand{\hilbert}{\mathbb{H}}
+\newcommand{\sph}{Y^{m_l}_l(\theta,\phi)}
+\newcommand{\tsph}{\mc{Y}^{ls}_{jm}(\theta,\phi)}
+\newcommand{\oham}{\opr{\mathcal{H}}}
+\newcommand{\sla}[1]{\slashed{#1}}
+\newcommand{\term}[3][]{^{#3}#2_{#1}}
+\renewcommand{\F}{\hat{\mathcal{F}}}
+\newcommand{\act}{\mathcal{S}}
+\newcommand{\lag}{\mathcal{L}}
+\newcommand{\dopr}{\hat{\rho}}
+\newcommand{\qsum}{\sideset{}{'}\sum}
+\newcommand{\nuc}[4][]{ {}_{#4}^{#3}{\mathrm{#2}}_{#1} } %\nuc[N]{M}{A}{Z}
+\DeclarePairedDelimiter\rounding{\lceil}{\rfloor}
+% --- }}}
 %%ENVIRONMENTS%%
 \newenvironment{paligned}[1][\{]{\left#1\begin{aligned}}{\end{aligned}\right.}

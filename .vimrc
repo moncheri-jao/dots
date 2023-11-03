@@ -11,7 +11,7 @@
 "=========================================================
 " --- PLUGINS --- {{{
 	call plug#begin('~/.vim/plugged')
-		"Plug 'frazrepo/vim-rainbow'
+		Plug 'frazrepo/vim-rainbow'
 		Plug 'preservim/nerdcommenter'
 		Plug 'vim-latex/vim-latex'
 		Plug 'dylanaraps/wal.vim'
@@ -37,8 +37,7 @@
 
 " --- BASE SETTINGS --- {{{
 " -- LEADER -- {{{
-	"let mapleader ="\º"
-	let mapleader = "\»"
+	let mapleader = "."
 	let ttimeoutlen=500
 " -- }}}
 " -- FUNCTIONS -- {{{
@@ -47,8 +46,8 @@
 " placeholder navigation
 	inoremap þ <++><Esc>T<hi
 	nnoremap þ <Ins><++><Esc>T<h
-	inoremap <M-p> <++><Esc>T<hi
-	nnoremap <M-p> i<++><Esc>T<hi
+	inoremap <C-p> <++><Esc>T<hi
+	nnoremap <C-p> i<++><Esc>T<hi
 " -- }}}
 " -- GENERAL -- {{{
 " disable autocommenting
@@ -103,7 +102,7 @@
 	let g:tex_flavor="latex"
 	let g:tex_itemize_env="figure,paligned,cases,dcases,pmatrix,aligned,align,matrix,pmatrix,table,tabular"
 	let g:Tex_PromptedEnvironments="dcases,pmatrix,aligned,paligned,enumerate,itemize,figure,table"
-	let g:Tex_Leader = '«'
+	let g:Tex_Leader = ','
 " -- }}}
 " -- COMPILERS -- {{{
 " - INOREMAPS - {{{
@@ -143,6 +142,7 @@
 " -- }}}
 " -- COMMANDS -- {{{
 	autocmd FileType tex inoremap <C-t> \texttt{}<++><esc>T{i
+	autocmd FileType tex inoremap <C-e> \emph{}<++><esc>T{i
 	autocmd FileType tex inoremap <M-i> \textit{}<++><esc>T{i
 	autocmd FileType tex inoremap <leader>v \vec{}<++><esc>T{i
 	autocmd FileType tex inoremap <leader>b \pmb{}<++><esc>T{i
@@ -157,6 +157,7 @@
 	autocmd FileType tex inoremap <C-l> <esc>A<enter>\lipsum<esc>A
 	autocmd FileType tex nnoremap <C-l> <esc>A<enter>\lipsum<esc>
 	autocmd FileType tex inoremap <C-h> \hbar
+	autocmd FileType tex inoremap <C-a> \mathrm{}<++><esc>T{i
 " -- }}}
 " -- LIPSUM NAVIGATION -- {{{
 	autocmd FileType tex nnoremap <M-l> /\\lipsum<enter><esc>:s/\\lipsum/<enter>i
