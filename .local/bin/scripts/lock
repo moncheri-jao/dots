@@ -20,8 +20,8 @@ convert "$tmpbg" -filter Hermite -thumbnail 20% -sample 500% "$tmpbg"
 convert "$tmpbg" "$icon" -gravity center -composite "$tmpbg"
 #
 # lock the screen with the blurred screenshot and shutdown the screen after 5s
-sleep 1
-#ibus engine xkb:us:colemak_dh:eng
+sleep 1 
+#ibus engine xkb:us:colemak_dh:eng (keyboard choice after the locking)
 trap revert HUP INT TERM
 xset +dpms dpms 10 10 10
 i3lock -n -i "$tmpbg"
