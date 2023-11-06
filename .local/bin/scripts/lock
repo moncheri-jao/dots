@@ -23,6 +23,6 @@ convert "$tmpbg" "$icon" -gravity center -composite "$tmpbg"
 sleep 1 
 #ibus engine xkb:us:colemak_dh:eng (keyboard choice after the locking)
 trap revert HUP INT TERM
-xset +dpms dpms 10 10 10
+xset +dpms dpms 60 120 180
 i3lock -n -i "$tmpbg"
 revert
