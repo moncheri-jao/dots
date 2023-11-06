@@ -29,15 +29,16 @@
 	exec --no-startup-id xinput set-prop 11 344 1
 	exec --no-startup-id xinput set-prop 11 357 1
 #	exec --no-startup-id xinput set-prop 11 312 1 && xinput set-prop 11 325 1
+	exec --no-startup-id ibus-daemon -drxR
 	exec --no-startup-id xcompmgr -cfn
-	exec --no-startup-id redshift
-	exec --no-startup-id openrgb -p red50
-	exec --no-startup-id dropbox
+#	exec --no-startup-id redshift
+	exec --no-startup-id openrgb -p rainbowslow
 	exec --no-startup-id nm-applet
+	exec --no-startup-id redshift-gtk
 	exec --no-startup-id picom -b
+	exec --no-startup-id dropbox
 	exec --no-startup-id xset s 600 5
 	exec --no-startup-id xss-lock $HOME/.local/bin/scripts/lock
-	exec --no-startup-id ibus-daemon -drxR
 #	double shift for caps
 	exec setxkbmap -option "shift:both_capslock"
 	exec ibus engine xkb:us:colemak_dh:eng
